@@ -17,7 +17,7 @@ export const tutorsSkillSet = [
 export const allUsers = [
   {
 	 id: 1,
-	 firstName: "Hilargi",
+	 yafirstName: "Hilargi",
 		lastName: "Alecto",
 		email: "hilargi@gmail.com",
 		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
