@@ -1,11 +1,12 @@
 import React from 'react'
+import './ResultsButtons.css';
 
-export default function resultsButtonAccepts (props) {
+export default function ResultsButtonAccept (props) {
   return (
     <input
       type="submit"
-      class="button-accepts"
-      value=">"
+      value="ok"
+      className="results-button results-button-ok"
     />
 
   )

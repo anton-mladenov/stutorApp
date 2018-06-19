@@ -1,0 +1,32 @@
+.results-button {
+    border: 2px solid;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    outline:0;
+}
+
+.results-button-ok {
+  border-color: green;
+}
+
+.results-button-no {
+  border-color: red;
+}
+
+.results-button-ok:hover {
+  background-color: green;
+  border-color: #fff;
+  color: #fff;
+}
+
+.results-button-no:hover {
+  background-color: red;
+  border-color: #fff;
+  color: #fff;
+}
