@@ -9,9 +9,9 @@
 
 // - the function takes two arguments - user A and user B;
 // - the function checks whether user A has a particular user B in his/her "likes" array ...
-// 	... && whether user B has the same particular user A in his/her "requests array" 
+// 	... && whether user B has the same particular user A in his/her "requests array"
 
-// - if these two conditions do NOT match, the function returns something?/the current (Redux) state?/nothing? ... 
+// - if these two conditions do NOT match, the function returns something?/the current (Redux) state?/nothing? ...
 // - if these two conditions DO match, the function returns a match which will be most likely another function ...
 // 	...which then sends a notification/email to the same two users who have been matched
 
@@ -34,7 +34,7 @@ let isMatched2 = (a, b) => {
 	if (abc) {
 
 	} else if {
-		
+
 	}
 };
 
