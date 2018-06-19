@@ -1,0 +1,44 @@
+.results-user-container-skill {
+  text-align: left;
+}
+.results-user-container-photo {
+
+}
+.results-user-container-name {
+  text-align: left;
+}
+.results-user-container-location {
+  text-align: left;
+}
+.results-user-container-bio {
+  text-align: left;
+}
+
+.results-button {
+    border: 5px solid;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    outline:0;
+}
+
+.results-button-ok {
+  background-color: #8AE0AD;
+  border-color: #FFFFFF;
+}
+
+.results-button-no {
+  background-color: #F77171;
+  border-color: #FFFFFF;
+}
+
+.results-button-ok:hover {
+  background-color: #FFFFFF;
+  border-color: #8AE0AD;
+}
+
+.results-button-no:hover {
+  background-color: #FFFFFF;
+  border-color: #F77171;
+}

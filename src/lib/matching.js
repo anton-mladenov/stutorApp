@@ -10,7 +10,7 @@ let tutorsSkillSet = [
 	{id: 5,
 	name: "Marketing"}
 ]
-export default let allUsers = [
+let allUsers = [
   {
 		id: 1,
 		firstName: "Hilargi",
