@@ -18,7 +18,7 @@ class App extends Component {
         <Route exact path="/results" component={resultsContainer} />
         <Route exact path="/dashboard" component={DashboardContainer} />
         <Link to="/results">Go back to the results</Link>
-        <Link to="/DashboardContainer">Go back to the dashboard</Link>
+        <Link to="/dashboard">Go back to the dashboard</Link>
 
       </div>
     );
