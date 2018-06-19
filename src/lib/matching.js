@@ -11,7 +11,7 @@ let tutorsSkillSet = [
 	name: "Marketing"}
 ]
 let allUsers = [
-	{
+  {
 		id: 1,
 		firstName: "Hilargi",
 		lastName: "Alecto",
@@ -106,38 +106,16 @@ let allUsers = [
 		accepted: [7, 9]
 	},
 ]
-
-// const getTutorsWithSkillId = (skillId, allUsers) => {
-//   return getTutors(allUsers).filter(skilledUser => skilledUser.skills === skillId)
-// }
-
-const getTutors = (allUsers) => {
-	return allUsers.map(user => user)
-                  .filter(userinfo => userinfo.skills)
-}
-const getTutorsWithSkillId = (skillId, allUsers) => {
-  return getTutors(allUsers)
-          .filter(skilledUser => skilledUser.skills.includes(skillId))
-}
-const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
-  return  getTutorsWithSkillId(skillId, allUsers)
-          .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
-          )
-}
-
-const waitingForAcceptance = (currentUserId, allUsers) => {
+export const getTutors = (allUsers) => {
   return allUsers.map(user => user)
-                .filter(allUsers => allUsers.accepted.includes(currentUserId))
+    .filter(userinfo => userinfo.skills)
 }
-
-const matchLogic = (id) => {
-  return waitingForAcceptance.map(user => user)
-                            .filter(currentUser.accepted.includes(user.id))
-
+export const getTutorsWithSkillId = (skillId, allUsers) => {
+  return getTutors(allUsers)
+    .filter(skilledUser => skilledUser.skills.includes(skillId))
 }
-
-console.log(getTutors(allUsers));
-console.log(getTutorsWithSkillId(4, allUsers));
-console.log(getTutorsWithSkillIdAndNotAccepted(1, 4, allUsers));
-console.log(acceptStudent(9, allUsers));
-console.log(matchLogic(9, allUsers));
+export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
+  return  getTutorsWithSkillId(skillId, allUsers)
+    .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
+    )
+}
