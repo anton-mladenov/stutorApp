@@ -11,14 +11,13 @@ export const tutorsSkillSet = [
 	name: "Marketing"}
 ]
 
-<<<<<<< HEAD
-export const students = [
-=======
-let allUsers = [
->>>>>>> 935715f419fcd9f88f23ead9ee5b6606c1528b4d
-	{
-		id: 1,
-		firstName: "Hilargi",
+
+
+
+export const allUsers = [
+  {
+	 id: 1,
+	 firstName: "Hilargi",
 		lastName: "Alecto",
 		email: "hilargi@gmail.com",
 		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
@@ -108,5 +107,5 @@ let allUsers = [
 		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",
 		rejected: [4],
 		accepted: [7, 9]
-	},
+	}
 ]
