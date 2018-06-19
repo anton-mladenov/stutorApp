@@ -10,7 +10,6 @@ let tutorsSkillSet = [
 	{id: 5,
 	name: "Marketing"}
 ]
-
 let allUsers = [
 	{
 		id: 1,
@@ -45,7 +44,7 @@ let allUsers = [
 		lastName: "Ormond",
 		email: "tameka@gmail.com",
 		shortBio: "I am loveable and exciting, but can also be very cowardly and a bit unkind.",
-		skills: [tutorsSkillSet[0], tutorsSkillSet[1]],
+		skills: [1],
 		rejected: [],
 		accepted: []
 	},
@@ -55,6 +54,7 @@ let allUsers = [
 		lastName: "Firuze",
 		email: "ayako@gmail.com",
 		shortBio: "A law student with an unfortunate habit of bumping off the people around her.",
+    skills: [3],
 		rejected: [7],
 		accepted: [9, 4]
 	},
@@ -73,9 +73,9 @@ let allUsers = [
 		lastName: "Stefanija",
 		email: "sheela@gmail.com",
 		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [4, 6]
 	},
 	{
 		id: 8,
@@ -83,7 +83,7 @@ let allUsers = [
 		lastName: "Fedelmid",
 		email: "nilima@gmail.com",
 		shortBio: "A personal trainer who enjoys watching television, working on cars and traveling.",
-		rejected: [4, 9],
+		rejected: [9],
 		accepted: [7]
 	},
 	{
@@ -92,9 +92,9 @@ let allUsers = [
 		lastName: "Balendin",
 		email: "methodius@gmail.com",
 		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [1, 10]
 	},
 	{
 		id: 10,
@@ -106,3 +106,39 @@ let allUsers = [
 		accepted: [7, 9]
 	},
 ]
+
+// const getTutorsWithSkillId = (skillId, allUsers) => {
+//   return getTutors(allUsers).filter(skilledUser => skilledUser.skills === skillId)
+// }
+
+const getTutors = (allUsers) => {
+	return allUsers.map(user => user)
+                  .filter(userinfo => userinfo.skills)
+}
+const getTutorsWithSkillId = (skillId, allUsers) => {
+  return getTutors(allUsers)
+          .filter(skilledUser => skilledUser.skills.includes(skillId))
+}
+const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
+  return  getTutorsWithSkillId(skillId, allUsers)
+          .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
+          )
+}
+
+const waitingForAcceptance = (currentUserId, allUsers) => {
+  return allUsers.map(user => user)
+                .filter(allUsers => allUsers.accepted.includes(currentUserId))
+}
+
+const matchLogic = (currentUserId, allUsers) => {
+  const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
+
+  //return currentUserAccepted.accepted.map(a => waitingForAcceptance(currentUserId, allUsers).filter(b => b.id === a))
+  return currentUserAccepted.accepted.map(a => waitingForAcceptance(currentUserId, allUsers).filter(b => b.id === a)).map(c => c[0])
+}
+
+console.log(getTutors(allUsers));
+console.log(getTutorsWithSkillId(4, allUsers));
+console.log(getTutorsWithSkillIdAndNotAccepted(1, 4, allUsers));
+console.log(waitingForAcceptance(9, allUsers));
+console.log(matchLogic(9, allUsers));
