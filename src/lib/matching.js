@@ -1,42 +1,143 @@
+let tutorsSkillSet = [
+	{id: 1,
+	name: "HTML/CSS"},
+	{id: 2,
+	name: "Design"},
+	{id: 3,
+	name: "React"},
+	{id: 4,
+	name: "NodeJS"},
+	{id: 5,
+	name: "Marketing"}
+]
+let allUsers = [
+	{
+		id: 1,
+		firstName: "Hilargi",
+		lastName: "Alecto",
+		email: "hilargi@gmail.com",
+		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
+		rejected: [4],
+		accepted: [7,9]
+	},
+	{
+		id: 2,
+		firstName: "Keara",
+		lastName: "Naseem",
+		email: "keara@gmail.com",
+		shortBio: "I am a 61-year-old CEO who enjoys donating blood, jigsaw puzzles and adult colouring books.",
+		rejected: [7, 4],
+		accepted: [9]
+	},
+	{
+		id: 3,
+		firstName: "Svetlana",
+		lastName: "Vulcan",
+		email: "svetlana@gmail.com",
+		shortBio: "I am brave and brave, but can also be very greedy and a bit standoffish.",
+		rejected: [9, 7],
+		accepted: [4]
+	},
+	{
+		id: 4,
+		firstName: "Tameka",
+		lastName: "Ormond",
+		email: "tameka@gmail.com",
+		shortBio: "I am loveable and exciting, but can also be very cowardly and a bit unkind.",
+		skills: [1],
+		rejected: [],
+		accepted: []
+	},
+	{
+		id: 5,
+		firstName: "Ayako",
+		lastName: "Firuze",
+		email: "ayako@gmail.com",
+		shortBio: "A law student with an unfortunate habit of bumping off the people around her.",
+    skills: [3],
+		rejected: [7],
+		accepted: [9, 4]
+	},
+	{
+		id: 6,
+		firstName: "Eleazar",
+		lastName: "Felix",
+		email: "eleazar@gmail.com",
+		shortBio: "A senior politician with an unfortunate habit of bumping off the people around her. I am also inspiring and smart.",
+		rejected: [9],
+		accepted: [4]
+	},
+	{
+		id: 7,
+		firstName: "Sheela",
+		lastName: "Stefanija",
+		email: "sheela@gmail.com",
+		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",
+		skills: [4],
+		rejected: [],
+		accepted: [4, 6]
+	},
+	{
+		id: 8,
+		firstName: "Nilima",
+		lastName: "Fedelmid",
+		email: "nilima@gmail.com",
+		shortBio: "A personal trainer who enjoys watching television, working on cars and traveling.",
+		rejected: [9],
+		accepted: [7]
+	},
+	{
+		id: 9,
+		firstName: "Methodius",
+		lastName: "Balendin",
+		email: "methodius@gmail.com",
+		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
+		skills: [4],
+		rejected: [],
+		accepted: [1, 10]
+	},
+	{
+		id: 10,
+		firstName: "Kumar",
+		lastName: "Lena",
+		email: "kumar@gmail.com",
+		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",
+		rejected: [4],
+		accepted: [7, 9]
+	},
+]
 
-// - user A is a students
-// - user A has a property "likes" which holds one/few/many an array of strings, ...
-// 	... where each string represents the "id" of any user B
-// - an "id" of any user B is being added to the user A''s array of "likes" whenever user A "swipes LIKE" a particular user B
-
-// - user B is a tutor
-// - user B has a property "requests" which holds one/few/many requests for matching from any user A
-
-// - the function takes two arguments - user A and user B;
-// - the function checks whether user A has a particular user B in his/her "likes" array ...
-// 	... && whether user B has the same particular user A in his/her "requests array" 
-
-// - if these two conditions do NOT match, the function returns something?/the current (Redux) state?/nothing? ... 
-// - if these two conditions DO match, the function returns a match which will be most likely another function ...
-// 	...which then sends a notification/email to the same two users who have been matched
-
-// if a match between any user A and user B already exist, the function shouldn't be able to match them again as well as ...
-// ... each of them should be excluded from the array of the other
-
-var userAAALikes = ['spray', 'limit', 'dog', '', 'destruction', 'present'];
-var userBBBRequests = ['cat', 'dog', 'bat'];
-
-// let isMatched = (a, b) => {
-// 	// let abc = a.includes("spray")
-// 	let abc = a.filter(element => b.includes(element))
-// 	console.log("does abc include X? =>  " + abc)
+// const getTutorsWithSkillId = (skillId, allUsers) => {
+//   return getTutors(allUsers).filter(skilledUser => skilledUser.skills === skillId)
 // }
 
-let isMatched2 = (a, b) => {
-	// let abc = a.includes("spray")
-	let abc = b.filter(element => a.includes(element))
-	console.log("does abc include X? =>  " + abc)
-	if (abc) {
+const getTutors = (allUsers) => {
+	return allUsers.map(user => user)
+                  .filter(userinfo => userinfo.skills)
+}
+const getTutorsWithSkillId = (skillId, allUsers) => {
+  return getTutors(allUsers)
+          .filter(skilledUser => skilledUser.skills.includes(skillId))
+}
+const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
+  return  getTutorsWithSkillId(skillId, allUsers)
+          .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
+          )
+}
 
-	} else if {
-		
-	}
-};
+const waitingForAcceptance = (currentUserId, allUsers) => {
+  return allUsers.map(user => user)
+                .filter(allUsers => allUsers.accepted.includes(currentUserId))
+}
 
-// isMatched(userAAALikes, userBBBRequests);
-isMatched2(userAAALikes, userBBBRequests);
+const matchLogic = (id) => {
+  return waitingForAcceptance.map(user => user)
+                            .filter(currentUser.accepted.includes(user.id))
+
+}
+
+console.log(getTutors(allUsers));
+console.log(getTutorsWithSkillId(4, allUsers));
+console.log(getTutorsWithSkillIdAndNotAccepted(1, 4, allUsers));
+console.log(acceptStudent(9, allUsers));
+console.log(matchLogic(9, allUsers));
