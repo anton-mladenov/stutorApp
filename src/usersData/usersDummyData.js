@@ -11,6 +11,8 @@ let tutorsSkillSet = [
 	name: "Marketing"}
 ]
 
+module.exports = { tutorsSkillSet }
+
 let students = [
 	{
 		id: 1,
