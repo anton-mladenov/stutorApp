@@ -5,9 +5,6 @@ import logo from '../lib/logo-text.png';
 import { Link } from 'react-router-dom'
 
 export default class HomeDashContainer extends Component {
-
-
-
   render() {
 	return (
 

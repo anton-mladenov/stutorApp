@@ -6,24 +6,20 @@ import {tutorsSkillSet} from "../usersData/usersDummyData"
 
 export default class SelectSkill extends Component {
 
+
+
 	state = {
-         selected: ""
-     }
-
-
-	handleClick = (event) => {
-	        if (this.state.selected === false) {
-	            this.setState({selected: event.target.value })
-	        }
-	    }
-
-
-
-
-	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <button key={skill.id} value={skill.id} onClick={this.handleClick} className='black-button'><Link to={`/results/11/${skill.id}`} className="link-text"> {skill.name}</Link> </button>)
+		showMenu: false
 	}
 
+	showMenu = (event) => {
+		event.preventDefault()
+		this.setState({ showMenu: true })
+	}
+
+	showPredefinedSkills = () => {
+		return tutorsSkillSet.map(skill => <option key={skill.id} className= "style-of-single-list"> {skill.name} </option>)
+	}
 
 
 
@@ -42,17 +38,25 @@ export default class SelectSkill extends Component {
       <br/>
       <div className="add-skill-container">
       <p className="title2">Find a tutor</p>
-
-
-       {this.showPredefinedSkills()}
-
+      <select className= "style-drop-down-menu">
+     {this.showPredefinedSkills()}
+      </select>
       <br/>
       <br/>
+
+      {
+				this.state.showMenu ?
+				<div className="searchOptionsMenu">
+					{this.showPredefinedSkills()}
+				</div>
+				: null
+			}
       </div>
       <br/>
       <br/>
       <br/>
       <br/>
+      <button className='black-button'> <Link to={`/results`} className="link-text">GO!</Link>< /button>
       <br/>
       <br/>
       <br/>
