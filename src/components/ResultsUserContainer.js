@@ -3,22 +3,14 @@ import './Results.css';
 import ResultsButtonAccept from './ResultsButtonAccept'
 import ResultsButtonReject from './ResultsButtonReject'
 import testProfile from '../usersData/test-profile.jpg'
+import { getSkill, isTutor } from '../lib/matching.js'
 
 export default function ResultsUserContainer (props) {
   const skills = props.data.skills
   const stutors = props.data.stutor
   const skillId = 1
 
-  const getSkill = (skillId, skills) => {
-    return skills.filter(a => a.id === skillId)[0].name
-  }
-  const isTutor = (userId, stutors) => {
-    if(stutors.filter(a => a.id === userId)[0].skills.length > 0) {
-      return "TUTOR"
-    } else {
-      return "STUDENT"
-    }
-  }
+
   return (
     stutors.map(stutor =>
       <div className="results-user-container" key={ stutor.id }>
