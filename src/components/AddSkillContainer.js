@@ -8,26 +8,56 @@ const user11 = {
 	}
 
 export class AddSkillContainer extends Component {
-  
-	showSkills = () => {
-		return this.props.skills.map(skill => 
-		<div key={skill.id}>
-		<h6> {skill.name} </h6>
-		<button className="addSkillButton"> + </button>
-		</div>
-		)
+	
+	state = {
+		showMenu: false
 	}
 
+	// showSkills = () => {
+	// 	return this.props.skills.map(skill => 
+	// 	<div key={skill.id}>
+	// 	<h6> {skill.name} </h6>
+	// 	<button className="addSkillButton" onClick={this.addNewSkill(skill.id)}> + </button>
+	// 	</div>
+	// 	)
+	// }
+	showSkills = () => {
+        return this.props.skills.map(skill => <option key={skill.id}> {skill.name} </option>)
+    }
+
 	addNewSkill = (skill) => {
-		
+		console.log("button clicked, bro!")
+		console.log("user11 skills array: " + user11.skills)
 		return user11.skills.includes(skill) ? user11.skills : user11.skills.unshift(skill)
 	}
   
 	render() {
 		return (
+		// {this.showSkills()}
+		{/* {this.userSomething()} */}
+		// <div className="dropdownListWrapper">
+		// 	Ad
+		// </div>
 		<div>
-			{this.showSkills()}
-			{/* {this.userSomething()} */}
+
+			<div>
+				<p> Add A Skill </p>
+			</div>
+			
+			<div>
+				<select> {this.showSkills()} </select>
+			</div>
+
+			<div>
+			{
+				this.state.showMenu ? 
+				<div>
+					{this.showSkills()}
+				</div> 
+				: null
+			}
+			</div>
+
 		</div>
 		)
   	}
@@ -41,3 +71,4 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,{ addSkill })(AddSkillContainer)
+
