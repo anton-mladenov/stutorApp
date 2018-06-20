@@ -5,6 +5,9 @@ import logo from '../lib/logo-text.png';
 import { Link } from 'react-router-dom'
 
 export default class HomeDashContainer extends Component {
+
+
+
   render() {
 	return (
 
@@ -20,6 +23,7 @@ export default class HomeDashContainer extends Component {
       <br/>
       <br/>
       <br/>
+      <button className= "button-dash"><Link to={`/selectskill`} className="link-text"> Find a tutor</Link> </button>
       <button className= "button-dash"><Link to={`/selectskill`} className="link-text"> Find a tutor</Link> </button>
       <br/>
       <br/>

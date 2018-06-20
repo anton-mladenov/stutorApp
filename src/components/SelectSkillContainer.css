@@ -55,7 +55,7 @@
 }
 
 .black-button{
-  background-color: black;
+  background-color: #8AE0AD;
     border: none;
     color: white;
     padding: 20px;
@@ -80,4 +80,15 @@
 .link-text {
  text-decoration: none;
  color: white;
+}
+
+.select {
+    align-items: center;
+    white-space: pre;
+    background-color: white;
+    cursor: default;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
 }
