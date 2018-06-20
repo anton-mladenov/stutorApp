@@ -2,7 +2,9 @@
 
 import { combineReducers } from 'redux'
 import stutor from './stutor'
+import skills from './skills'
 
 export default combineReducers({
-  stutor
+  stutor,
+  skills
 })

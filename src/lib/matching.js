@@ -1,42 +1,39 @@
+export const getTutors = (allUsers) => {
+  return allUsers.map(user => user)
+    .filter(userinfo => userinfo.skills)
+}
+export const getTutorsWithSkillId = (skillId, allUsers) => {
+  return getTutors(allUsers)
+    .filter(skilledUser => skilledUser.skills.includes(skillId))
+}
+export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
+  return  getTutorsWithSkillId(skillId, allUsers)
+    .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
+			 )
+}
+export const waitingForAcceptance = (currentUserId, allUsers) => {
+  return allUsers.map(user => user)
+  	.filter(allUsers => allUsers.accepted.includes(currentUserId))
+}
+export const matchLogic = (currentUserId, allUsers) => {
+  const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
 
-// - user A is a students
-// - user A has a property "likes" which holds one/few/many an array of strings, ...
-// 	... where each string represents the "id" of any user B
-// - an "id" of any user B is being added to the user A''s array of "likes" whenever user A "swipes LIKE" a particular user B
-
-// - user B is a tutor
-// - user B has a property "requests" which holds one/few/many requests for matching from any user A
-
-// - the function takes two arguments - user A and user B;
-// - the function checks whether user A has a particular user B in his/her "likes" array ...
-// 	... && whether user B has the same particular user A in his/her "requests array" 
-
-// - if these two conditions do NOT match, the function returns something?/the current (Redux) state?/nothing? ... 
-// - if these two conditions DO match, the function returns a match which will be most likely another function ...
-// 	...which then sends a notification/email to the same two users who have been matched
-
-// if a match between any user A and user B already exist, the function shouldn't be able to match them again as well as ...
-// ... each of them should be excluded from the array of the other
-
-var userAAALikes = ['spray', 'limit', 'dog', '', 'destruction', 'present'];
-var userBBBRequests = ['cat', 'dog', 'bat'];
-
-// let isMatched = (a, b) => {
-// 	// let abc = a.includes("spray")
-// 	let abc = a.filter(element => b.includes(element))
-// 	console.log("does abc include X? =>  " + abc)
-// }
-
-let isMatched2 = (a, b) => {
-	// let abc = a.includes("spray")
-	let abc = b.filter(element => a.includes(element))
-	console.log("does abc include X? =>  " + abc)
-	if (abc) {
-
-	} else if {
-		
-	}
-};
-
-// isMatched(userAAALikes, userBBBRequests);
-isMatched2(userAAALikes, userBBBRequests);
+  //return currentUserAccepted.accepted.map(a => waitingForAcceptance(currentUserId, allUsers).filter(b => b.id === a))
+  return currentUserAccepted.accepted.map(a => waitingForAcceptance(currentUserId, allUsers).filter(b => b.id === a)).map(c => c[0])
+}
+export const getNamesOfTutors = (allUsers) => {
+	 return getTutors(allUsers).map(person => person.firstName)
+}
+export const getNameofStudentsToBeAccepted = (currentUserId, allUsers) => {
+	 return matchLogic(currentUserId, allUsers).map(person => person.firstName )
+}
+export const getSkill = (skillId, skills) => {
+	 return skills.filter(a => a.id === skillId)[0].name
+}
+export const isTutor = (userId, stutors) => {
+	 if(stutors.filter(a => a.id === userId)[0].skills.length > 0) {
+		 return "TUTOR"
+	 } else {
+		 return "STUDENT"
+	 }
+}
