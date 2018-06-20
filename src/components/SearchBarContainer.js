@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {tutorsSkillSet} from "../usersData/usersDummyData"
 
-export default class SearchBar extends Component {
+export default class SearchBarContainer extends Component {
 	
 	state = {
 		showMenu: false
@@ -13,11 +13,11 @@ export default class SearchBar extends Component {
 	}
 
 	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <button key={skill.id}> {skill.name} </button>)
+		return tutorsSkillSet.map(skill => <option key={skill.id}> {skill.name} </option>)
 	}
   
 	render() {
-		console.log(tutorsSkillSet, this.state, this.props);
+		// console.log(tutorsSkillSet, this.state, this.props);
 		
 		return (
 		<div>

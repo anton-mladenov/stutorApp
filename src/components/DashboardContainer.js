@@ -1,12 +1,13 @@
 import * as React from 'react'
 import DashboardFormUser from './DashboardFormUser'
-//import DashboardFormSkills from './DashboardFormSkills'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/stutor'
+//import DashboardFormSkills from './DashboardFormSkills'
 
 class DashboardContainer extends React.PureComponent {
+  
   addDashboardUser = (user) => {
-    console.log(user,'user')
+    // console.log(user,'user')
     /*
     this.props.dispatch({
       type: 'ADD_USER',
@@ -20,7 +21,7 @@ class DashboardContainer extends React.PureComponent {
   }
 
   render() {
-    console.log('DashboardContainer')
+    // console.log('DashboardContainer')
     return <DashboardFormUser addDashboardUser={this.addDashboardUser}/>
   }
 }

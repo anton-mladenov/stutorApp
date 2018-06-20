@@ -19,13 +19,13 @@ export default class DashboardFormUser extends React.PureComponent {
     this.setState({
       [name]: value
     });
-    console.log(this.state,'state')
+    // console.log(this.state,'state')
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state,'state submit')
-    console.log(this.state.skillChoice,'state skillChoice submit')
+    // console.log(this.state,'state submit')
+    // console.log(this.state.skillChoice,'state skillChoice submit')
 
     if (this.state.firstName && this.state.lastName &&
         this.state.emailAddress && this.state.shortBio
