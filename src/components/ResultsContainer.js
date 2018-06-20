@@ -6,8 +6,8 @@ import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
 import { addAccepted } from '../actions/stutor'
 
 export class ResultsContainer extends PureComponent {
-  currentUserId = 1
-  skillId = 1
+  currentUserId = parseInt(this.props.match.params.currentuserid, 10)
+  skillId = parseInt(this.props.match.params.skillid, 10)
   selectedUsers = getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor)
 
   showSelectedUsers = (selectedUsers) => {
