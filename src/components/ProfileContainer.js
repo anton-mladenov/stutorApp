@@ -1,6 +1,7 @@
 // src/components/ProfileContainer
 
 import * as React from 'react'
+
 import Profile from './Profile'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/stutor'
