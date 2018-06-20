@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import ResultsUserContainer from './ResultsUserContainer'
-import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching'
+// import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching'
 import './Results.css';
+
 const allUsers =
 [
   {
@@ -103,7 +104,7 @@ const allUsers =
 
 export default class ResultsContainer extends PureComponent {
   resultList = () => {
-    console.log(getTutorsWithSkillIdAndNotAccepted(1, 2, allUsers))
+    // console.log(getTutorsWithSkillIdAndNotAccepted(1, 2, allUsers))
   }
   render () {
     return (

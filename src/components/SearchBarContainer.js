@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
 	}
   
 	render() {
-		console.log(tutorsSkillSet, this.state, this.props);
+		// console.log(tutorsSkillSet, this.state, this.props);
 		
 		return (
 		<div>

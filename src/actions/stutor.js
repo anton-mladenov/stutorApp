@@ -10,3 +10,12 @@ export function addUser(user) {
     payload: user
   }
 }
+
+export const ADD_SKILL = 'ADD_SKILL'
+
+export function addSkill(skill) {
+  return {
+    type: ADD_SKILL,
+    payload: skill
+  }
+}

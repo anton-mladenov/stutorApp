@@ -6,12 +6,12 @@ import { allUsers } from "../usersData/usersDummyData"
 
 // Define the state tranformation actions
 const reducer = (state = allUsers, action = {}) => {
-  console.log(state,'store state')
-  console.log(action,'action')
+//   console.log(state,'store state')
+//   console.log(action,'action')
   switch (action.type) {
   case ADD_USER:
     // Add the new user to the user object array
-    console.log([...state, action.payload],'store state updated')
+    // console.log([...state, action.payload],'store state updated')
     return [...state, action.payload]
   default:
     // Return the initial/default state
