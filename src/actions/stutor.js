@@ -21,7 +21,7 @@ export function addSkill(skill) {
 }
 
 export function addAccepted(currentUserId, userId) {
-  console.log("action" + currentUserId)
+  console.log(currentUserId, userId)
   return {
     type: ADD_ACCEPT,
     payload: currentUserId, userId

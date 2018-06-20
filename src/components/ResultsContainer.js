@@ -9,15 +9,18 @@ export class ResultsContainer extends PureComponent {
   currentUserId = parseInt(this.props.match.params.currentuserid, 10)
   skillId = parseInt(this.props.match.params.skillid, 10)
   selectedUsers = getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor)
-
+  getNoProxy = (i) => {
+    console.log(i)
+  }
   showSelectedUsers = (selectedUsers) => {
     if (selectedUsers.length > 0) {
       return <ResultsUserContainer
         selectedUsers = { this.selectedUsers }
         data={ this.props.data }
         skillId= { this.skillId }
-        currentUserId = { this.currentUserId }
+        currentUserId = {1}
         addAccepted = { addAccepted }
+        getNoProxy = {this.getNoProxy}
       />
     } else {
       return <p>nothing to see here</p>

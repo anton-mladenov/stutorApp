@@ -16,6 +16,7 @@ const reducer = (state = allUsers, action = {}) => {
     return [...state, action.payload]
 
   case ADD_ACCEPT :
+    console.log('REDUCER')
     return (
       state.map(user => {
         if (user.id === action.currentUserId) {
