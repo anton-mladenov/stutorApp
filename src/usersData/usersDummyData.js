@@ -1,4 +1,6 @@
-let tutorsSkillSet = [
+
+
+export const tutorsSkillSet = [
 	{id: 1,
 	name: "HTML/CSS"},
 	{id: 2,
@@ -10,7 +12,8 @@ let tutorsSkillSet = [
 	{id: 5,
 	name: "Marketing"}
 ]
-let allUsers = [
+
+export const allUsers = [
 	{
 		id: 1,
 		firstName: "Hilargi",
