@@ -65,12 +65,12 @@ class LandingContainer extends Component {
         <br/>
         <div>{this.state.message}</div>
         <br/>
-        <input class="button" type="submit" value="Log in"/>
+        <input className="button" type="submit" value="Log in"/>
       </form>
       <h4>or</h4>
       <h2>Create a profile by clicking button below</h2>
       <Link to='/profile'>
-        <button class='button' type="button" >
+        <button className='button' type="button" >
               Create a Profile
         </button>
       </Link>
