@@ -1,3 +1,5 @@
+
+
 export const tutorsSkillSet = [
 	{id: 1,
 	name: "HTML/CSS"},
@@ -11,13 +13,10 @@ export const tutorsSkillSet = [
 	name: "Marketing"}
 ]
 
-
-
-
 export const allUsers = [
-  {
-	 id: 1,
-	 yafirstName: "Hilargi",
+	{
+		id: 1,
+		firstName: "Hilargi",
 		lastName: "Alecto",
 		email: "hilargi@gmail.com",
 		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
@@ -48,7 +47,7 @@ export const allUsers = [
 		lastName: "Ormond",
 		email: "tameka@gmail.com",
 		shortBio: "I am loveable and exciting, but can also be very cowardly and a bit unkind.",
-		skills: [tutorsSkillSet[0], tutorsSkillSet[1]],
+		skills: [1],
 		rejected: [],
 		accepted: []
 	},
@@ -58,6 +57,7 @@ export const allUsers = [
 		lastName: "Firuze",
 		email: "ayako@gmail.com",
 		shortBio: "A law student with an unfortunate habit of bumping off the people around her.",
+    skills: [3],
 		rejected: [7],
 		accepted: [9, 4]
 	},
@@ -76,9 +76,9 @@ export const allUsers = [
 		lastName: "Stefanija",
 		email: "sheela@gmail.com",
 		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [4, 6]
 	},
 	{
 		id: 8,
@@ -86,7 +86,7 @@ export const allUsers = [
 		lastName: "Fedelmid",
 		email: "nilima@gmail.com",
 		shortBio: "A personal trainer who enjoys watching television, working on cars and traveling.",
-		rejected: [4, 9],
+		rejected: [9],
 		accepted: [7]
 	},
 	{
@@ -95,9 +95,9 @@ export const allUsers = [
 		lastName: "Balendin",
 		email: "methodius@gmail.com",
 		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [1, 10]
 	},
 	{
 		id: 10,
@@ -107,5 +107,5 @@ export const allUsers = [
 		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",
 		rejected: [4],
 		accepted: [7, 9]
-	}
+	},
 ]
