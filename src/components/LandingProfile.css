@@ -8,12 +8,110 @@ input[type="submit"]{
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  background-color: #8AE0AD;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:   'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight:   100;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.button-blue {
+  background-color: #5E93DB;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:   'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight:   100;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.link-text-landing {
+ text-decoration: none;
+ color: white;
+ text-align: center;
+ font-size: 15px;
+}
+
+.title3 {
+  color:         #F77171;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   bold;
+  font-size:     40px;
+  margin:0;
+  padding:  5px;
+  line-height: 80%;
+  text-align: center;
+  font-weight:   300px;
+  line-height: 100%;
+}
+
+.title4 {
+  color:         #F77171;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   bold;
+  font-size:     20px;
+  margin:0;
+  padding:  20px;
+  line-height: 80%;
+  text-align: center;
+  font-weight:   300px;
+  line-height: 100%;
+}
+
+.title-container-2 {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.container-email-form {
+  margin: auto;
+   width: 70%;
+   height: 70%;
+   border: 3px solid #5E93DB;
+   background-color: #5E93DB;
+   padding: 10px;
+   border-radius: 20px;
+}
+
+p {
+  font-family:   'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  font-weight:   300px;
+  font-size:    20px;
+  margin:  3px;
+}
+
+.input {
+  width: 70%;
+  height: 70%;
+  margin-bottom: 30px;
+}
+
+.footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+
 }

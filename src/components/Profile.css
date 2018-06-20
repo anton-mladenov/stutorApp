@@ -1,0 +1,72 @@
+.home-dash-container {
+  padding:  20px;
+  background-image: url('../lib/background.png');
+  background-repeat: repeat;
+}
+
+.
+.title3 {
+  color:         #F77171;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   bold;
+  font-size:     40px;
+  margin:0;
+  padding-left:  40px;
+  line-height: 80%;
+  text-align: left;
+
+}
+.title-container-new {
+
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.form {
+  margin: auto;
+   width: 70%;
+   height: 70%;
+   border: 3px solid #5E93DB;
+   background-color: #5E93DB;
+   padding: 10px;
+   border-radius: 10%;
+   padding-bottom:  30px;
+ }
+
+.title2 {
+  color:         white;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   bold;
+  font-size:     25px;
+  margin:0;
+  padding: 30px;
+  line-height: 80%;
+  text-align: center;
+}
+
+
+.input {
+  width: 70%;
+  height: 20px;
+  margin-bottom: 1px;
+  border-radius: 7px;
+}
+
+p {
+  font-family:   'Poppins', sans-serif;
+  color: White;
+  text-align: center;
+  font-weight:   300px;
+  font-size:    20px;
+}
+
+.biotext{
+  width: 70%;
+  height: 150px;
+  margin-bottom: 5px;
+  border-radius: 30%;
+  border-color:  #5E93DB
+}
+textarea {
+    padding:  30px 0;
+}

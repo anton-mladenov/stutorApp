@@ -3,7 +3,7 @@
 import * as React from 'react'
 //import { Link  } from 'react-router-dom'
 import { Redirect } from 'react-router';
-import './LandingProfile.css'
+import './Profile.css'
 
 export default class Profile extends React.PureComponent {
 
@@ -65,25 +65,33 @@ export default class Profile extends React.PureComponent {
     if (this.state.redirect) {
       return <Redirect push to={this.state.link}/>;
     }
-    return (<div>
-      <h2>Fill in your Profile info please</h2>
-      <form id='userform' onSubmit={this.handleSubmit}>
+    return (
+      <div>
+      <div className="home-dash-container">
+      <div className = "title-container-new">
+      <h2 className="title3">Fill in your Profile Info </h2>
+      </div>
+      <form id='userform' onSubmit={this.handleSubmit} className="form">
         <label>
-          First Name:
-          <input type="text" name="firstName" required onChange={this.handleChange} />
+          <p>First Name</p>
+          <input type="text" name="firstName" className="input" required onChange={this.handleChange} />
         </label>
+        <br/>
+        <br/>
         <label>
-          Last Name:
-          <input type="text" name="lastName" onChange={this.handleChange} />
+          <p>Last Name</p>
+          <input type="text" name="lastName" className="input" onChange={this.handleChange} />
         </label>
-        <br/><br/>
+          <br/>
+        <br/>
         <label>
-          Email Address:
-          <input type="text" name="emailAddress" onChange={this.handleChange} />
+          <p>Email Address</p>
+          <input type="text" name="emailAddress" className="input"onChange={this.handleChange} />
         </label>
+          <br/>
       </form>
       <br/>
-      <textarea rows="4" cols="50" name="shortBio" form="userform" onChange={this.handleChange}>Enter a short bio, please</textarea>
+      <textarea rows="4" cols="50" name="shortBio" form="userform" className= "biotext" onChange={this.handleChange}>                    Enter a short bio, please</textarea>
       <br/>
       <div>{this.state.message}</div>
       <br/>
@@ -99,6 +107,7 @@ export default class Profile extends React.PureComponent {
       </Link>
       <br/><br/>
       */}
+      </div>
       </div>
     )
   }

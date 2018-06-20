@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addSkill } from '../actions/stutor'
+import { Link } from 'react-router-dom'
+import './AddSkillContainer.css';
 
 const user11 = {
 		id: 11,
@@ -8,9 +10,9 @@ const user11 = {
 	}
 
 export class AddSkillContainer extends Component {
-	
+
 	// showSkills = () => {
-	// 	return this.props.skills.map(skill => 
+	// 	return this.props.skills.map(skill =>
 	// 	<div key={skill.id}>
 	// 	<h6> {skill.name} </h6>
 	// 	<button className="addSkillButton" onClick={this.addNewSkill(skill.id)}> + </button>
@@ -21,7 +23,7 @@ export class AddSkillContainer extends Component {
 		showMenu: false,
 		selected: ""
 	}
-	
+
 	addNewSkill = (skill) => {
 		return user11.skills.includes(skill) ? user11.skills : user11.skills.unshift(skill)
 	}
@@ -42,29 +44,27 @@ export class AddSkillContainer extends Component {
 	render() {
 		return (
 		<div>
-			
-			<div>
-				<label>
-					Add A Skill
-					{/* <button onClick={this.showSkills()}> Add A Skill </button>  */}
-					<select value={this.state.value} onChange={this.handleChange}> 
-					{this.showSkills()} 
-					</select> 
-				</label>
+			<div className="home-dash-container">
+
+			<div className = "title-container">
+			<h1 className="title">JOIN</h1>
 			</div>
 
-			{/* <div>
-			{
-				this.state.showMenu ? 
-				<div>
+			<div className = "add-skill-container">
+				<label >
+					<p className ="title2">Become a Tutor</p>
+					<select className="select"value={this.state.value} onChange={this.handleChange}>
 					{this.showSkills()}
-				</div> 
-				: null
-			}
-			</div> */}
-
+					</select>
+				</label>
+			</div>
+			<br/>
+			<button className = "black-button">GO!</button>
+			<div className= "footer">
+			</div>
+     </div>
 		</div>
-		
+
 		)
   	}
 }
@@ -77,4 +77,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,{ addSkill })(AddSkillContainer)
-

@@ -55,26 +55,34 @@ class LandingContainer extends Component {
     if (this.state.redirect) {
       return <Redirect push to={this.state.link}/>;
     }
-    return (<div>
-      <h2>Log in with your email address </h2>
+    return (
+      <div>
+      <div className="title-container-2">
+      <h2 className="title3">Log in with your email address </h2>
+      </div>
       <form id='loginform' onSubmit={this.handleSubmit}>
+      <div className="container-email-form">
         <label>
-          Email address:
-          <input type="text" name="emailAddress" onChange={this.handleChange}/>
+          <p classname="email-text">Email address</p>
+          <input type="text" name="emailAddress" className= "input" onChange={this.handleChange}/>
         </label>
+        </div>
         <br/>
         <div>{this.state.message}</div>
         <br/>
         <input class="button" type="submit" value="Log in"/>
+        <br/>
       </form>
-      <h4>or</h4>
-      <h2>Create a profile by clicking button below</h2>
+      <h4 >or</h4>
+      <h2 className="title4">Create a profile by clicking button below</h2>
       <Link to='/profile'>
-        <button class='button' type="button" >
+        <button class='button-blue' type="button" >
               Create a Profile
         </button>
       </Link>
       <br/><br/>
+      <div className="footer">
+      </div>
       </div>
     )
   }

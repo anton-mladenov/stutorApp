@@ -21,7 +21,7 @@ export default class SelectSkill extends Component {
 
 
 	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <button key={skill.id} value={skill.id} onClick={this.handleClick} className='black-button'><Link to={`/results/11/${skill.id}`} className="link-text"> {skill.name}</Link> </button>)
+		return tutorsSkillSet.map(skill => <button key={skill.id} value={skill.id} onClick={this.handleClick} className='button-select2 shake'><Link to={`/results/11/${skill.id}`} className="link-text"> {skill.name}</Link> </button>)
 	}
 
 
@@ -31,7 +31,7 @@ export default class SelectSkill extends Component {
     console.log(tutorsSkillSet, this.state, this.props);
 	return (
 	  <div>
-    <div className="home-dash-container">
+    <div className="home-dash-container-select">
       <br/>
     <br/>
     <br/>
@@ -40,8 +40,8 @@ export default class SelectSkill extends Component {
       </div>
       <br/>
       <br/>
-      <div className="add-skill-container">
-      <p className="title2">Find a tutor</p>
+      <div className="add-skill-container-select">
+      <p className="title5">What do you want to learn?</p>
 
 
        {this.showPredefinedSkills()}
@@ -49,16 +49,8 @@ export default class SelectSkill extends Component {
       <br/>
       <br/>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+			<div className= "footer">
+			</div>
       </div>
 	  </div>
 	)
