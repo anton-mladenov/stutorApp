@@ -1,4 +1,5 @@
 
+
 export const getTutors = (allUsers) => {
 	return allUsers.map(user => user)
                   .filter(userinfo => userinfo.skills)
@@ -25,7 +26,7 @@ export const matchLogic = (currentUserId, allUsers) => {
   return currentUserAccepted.accepted.map(a => waitingForAcceptance(currentUserId, allUsers).filter(b => b.id === a)).map(c => c[0])
 }
 
-export const getNamesOfTutors = () => {
+export const getNamesOfTutors = (allUsers) => {
 	return getTutors(allUsers).map(person => person.firstName)
 }
 
@@ -36,8 +37,8 @@ export const getNameofStudentsToBeAccepted = (currentUserId, allUsers) => {
 
 
 
-console.log(getTutors(allUsers));
-console.log(getTutorsWithSkillId(4, allUsers));
-console.log(getTutorsWithSkillIdAndNotAccepted(1, 4, allUsers));
-console.log(acceptStudent(9, allUsers));
-console.log(matchLogic(9, allUsers));
+// console.log(getTutors(allUsers));
+// console.log(getTutorsWithSkillId(4, allUsers));
+// console.log(getTutorsWithSkillIdAndNotAccepted(1, 4, allUsers));
+// console.log(acceptStudent(9, allUsers));
+// console.log(matchLogic(9, allUsers));
