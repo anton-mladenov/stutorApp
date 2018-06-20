@@ -27,7 +27,7 @@ export class AddSkillContainer extends Component {
 	}
 
 	handleChange = (event) => {
-		if (this.state.selected === false) {
+		if (this.state.selected === "") {
 			this.setState({selected: event.target.value })
 		}
 		console.log(event.target.value)
