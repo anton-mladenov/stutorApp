@@ -30,7 +30,7 @@ export const allUsers = [
 		lastName: "Naseem",
 		emailAddress: "keara@gmail.com",
 		shortBio: "I am a 61-year-old CEO who enjoys donating blood, jigsaw puzzles and adult colouring books.",
-		skills: [],
+		skills: [1],
 		rejected: [7, 4],
 		accepted: [9]
 	},
@@ -40,7 +40,7 @@ export const allUsers = [
 		lastName: "Vulcan",
 		emailAddress: "svetlana@gmail.com",
 		shortBio: "I am brave and brave, but can also be very greedy and a bit standoffish.",
-		skills: [],
+		skills: [5],
 		rejected: [9, 7],
 		accepted: [4]
 	},

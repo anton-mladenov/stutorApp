@@ -7,15 +7,17 @@ import { getSkill, isTutor } from '../lib/matching.js'
 
 export default function ResultsUserContainer (props) {
   const skills = props.data.skills
-  const stutors = props.data.stutor
-  const skillId = 1
+  const selectedUsers = props.selectedUsers
+  const skillId = props.skillId
+  const currentUserId = props.currentUserId
 
 
   return (
-    stutors.map(stutor =>
+
+    selectedUsers.map(stutor =>
       <div className="results-user-container" key={ stutor.id }>
         <div className="results-user-container-type">
-          <p className="results-user-container-type-text">{ isTutor(stutor.id, stutors) }</p>
+          <p className="results-user-container-type-text">{ isTutor(stutor.id, selectedUsers) }</p>
         </div>
         <div className="results-user-container-skill">
           <p className="results-user-container-skill-text" >{ getSkill(skillId, skills) }</p>
@@ -33,8 +35,8 @@ export default function ResultsUserContainer (props) {
           <p className="results-user-container-bio-text">{ stutor.shortBio }</p>
         </div>
         <div className="results-buttons-container">
-          <ResultsButtonReject />
-          <ResultsButtonAccept />
+          <ResultsButtonReject currentUserId={ currentUserId }/>
+          <ResultsButtonAccept currentUserId={ currentUserId }/>
         </div>
       </div>
     )
