@@ -16,12 +16,12 @@ export default function ResultsUserContainer (props) {
 
   return (
     stutors.map(stutor =>
-      <div className="results-user-container">
+      <div className="results-user-container" key={ stutor.id }>
         <div className="results-user-container-type">
           <p className="results-user-container-type-text">TUTOR</p>
         </div>
         <div className="results-user-container-skill">
-          <p className="results-user-container-skill-text">{ getSkill(skillId, skills) }</p>
+          <p className="results-user-container-skill-text" >{ getSkill(skillId, skills) }</p>
         </div>
         <div className="results-user-container-photo">
           <img className="results-user-container-photo-img" src={ testProfile } alt="name"/>
