@@ -5,30 +5,41 @@ import ResultsButtonReject from './ResultsButtonReject'
 import testProfile from '../usersData/test-profile.jpg'
 
 export default function ResultsUserContainer (props) {
+  const skills = props.data.skills
+  const stutors = props.data.stutor
+  const skillId = 1
+
+  const getSkill = (skillId, skills) => {
+    return skills.filter(a => a.id === skillId)[0].name
+  }
+
+
   return (
-    <div className="results-user-container">
-      <div className="results-user-container-type">
-        <p className="results-user-container-type-text">TUTOR</p>
+    stutors.map(stutor =>
+      <div className="results-user-container">
+        <div className="results-user-container-type">
+          <p className="results-user-container-type-text">TUTOR</p>
+        </div>
+        <div className="results-user-container-skill">
+          <p className="results-user-container-skill-text">{ getSkill(skillId, skills) }</p>
+        </div>
+        <div className="results-user-container-photo">
+          <img className="results-user-container-photo-img" src={ testProfile } alt="name"/>
+        </div>
+        <div className="results-user-container-name">
+          <p className="results-user-container-name-text">{ stutor.firstName }</p>
+        </div>
+        <div className="results-user-container-location">
+          <p className="results-user-container-location-text">City, Distance</p>
+        </div>
+        <div className="results-user-container-bio">
+          <p className="results-user-container-bio-text">{ stutor.shortBio }</p>
+        </div>
+        <div className="results-buttons-container">
+          <ResultsButtonReject />
+          <ResultsButtonAccept />
+        </div>
       </div>
-      <div className="results-user-container-skill">
-        <p className="results-user-container-skill-text">Javascript</p>
-      </div>
-      <div className="results-user-container-photo">
-        <img className="results-user-container-photo-img" src={ testProfile } alt="name"/>
-      </div>
-      <div className="results-user-container-name">
-        <p className="results-user-container-name-text">Firstname</p>
-      </div>
-      <div className="results-user-container-location">
-        <p className="results-user-container-location-text">City, Distance</p>
-      </div>
-      <div className="results-user-container-bio">
-        <p className="results-user-container-bio-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-      </div>
-      <div className="results-buttons-container">
-        <ResultsButtonReject />
-        <ResultsButtonAccept />
-      </div>
-    </div>
+    )
   )
 }
