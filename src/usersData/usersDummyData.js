@@ -124,7 +124,7 @@ const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) =>
           .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
           )
 }
-
+//
 const waitingForAcceptance = (currentUserId, allUsers) => {
   return allUsers.map(user => user)
                 .filter(allUsers => allUsers.accepted.includes(currentUserId))
