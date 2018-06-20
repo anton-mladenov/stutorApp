@@ -24,7 +24,6 @@ export default class HomeDashContainer extends Component {
       <br/>
       <br/>
       <button className= "button-dash"><Link to={`/selectskill`} className="link-text"> Find a tutor</Link> </button>
-      <button className= "button-dash"><Link to={`/selectskill`} className="link-text"> Find a tutor</Link> </button>
       <br/>
       <br/>
       <button className= "button-dash2"> <Link to={`/addskill`} className="link-text"> Become a tutor </Link> </button>
