@@ -27,7 +27,7 @@ export class AddSkillContainer extends Component {
 		return (
 		<div>
 			{this.showSkills()}
-			{this.userSomething()}
+			{/* {this.userSomething()} */}
 		</div>
 		)
   	}
