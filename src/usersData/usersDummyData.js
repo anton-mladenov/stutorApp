@@ -1,4 +1,6 @@
-let tutorsSkillSet = [
+
+
+export const tutorsSkillSet = [
 	{id: 1,
 	name: "HTML/CSS"},
 	{id: 2,
@@ -11,15 +13,13 @@ let tutorsSkillSet = [
 	name: "Marketing"}
 ]
 
-module.exports = { tutorsSkillSet }
-
-let students = [
+export const allUsers = [
 	{
 		id: 1,
 		firstName: "Hilargi",
 		lastName: "Alecto",
 		email: "hilargi@gmail.com",
-		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",		
+		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
 		rejected: [4],
 		accepted: [7,9]
 	},
@@ -28,7 +28,7 @@ let students = [
 		firstName: "Keara",
 		lastName: "Naseem",
 		email: "keara@gmail.com",
-		shortBio: "I am a 61-year-old CEO who enjoys donating blood, jigsaw puzzles and adult colouring books.",		
+		shortBio: "I am a 61-year-old CEO who enjoys donating blood, jigsaw puzzles and adult colouring books.",
 		rejected: [7, 4],
 		accepted: [9]
 	},
@@ -37,7 +37,7 @@ let students = [
 		firstName: "Svetlana",
 		lastName: "Vulcan",
 		email: "svetlana@gmail.com",
-		shortBio: "I am brave and brave, but can also be very greedy and a bit standoffish.",		
+		shortBio: "I am brave and brave, but can also be very greedy and a bit standoffish.",
 		rejected: [9, 7],
 		accepted: [4]
 	},
@@ -46,8 +46,8 @@ let students = [
 		firstName: "Tameka",
 		lastName: "Ormond",
 		email: "tameka@gmail.com",
-		shortBio: "I am loveable and exciting, but can also be very cowardly and a bit unkind.",		
-		skills: [tutorsSkillSet[0], tutorsSkillSet[1]],
+		shortBio: "I am loveable and exciting, but can also be very cowardly and a bit unkind.",
+		skills: [1],
 		rejected: [],
 		accepted: []
 	},
@@ -56,7 +56,8 @@ let students = [
 		firstName: "Ayako",
 		lastName: "Firuze",
 		email: "ayako@gmail.com",
-		shortBio: "A law student with an unfortunate habit of bumping off the people around her.",		
+		shortBio: "A law student with an unfortunate habit of bumping off the people around her.",
+    skills: [3],
 		rejected: [7],
 		accepted: [9, 4]
 	},
@@ -65,7 +66,7 @@ let students = [
 		firstName: "Eleazar",
 		lastName: "Felix",
 		email: "eleazar@gmail.com",
-		shortBio: "A senior politician with an unfortunate habit of bumping off the people around her. I am also inspiring and smart.",		
+		shortBio: "A senior politician with an unfortunate habit of bumping off the people around her. I am also inspiring and smart.",
 		rejected: [9],
 		accepted: [4]
 	},
@@ -74,18 +75,18 @@ let students = [
 		firstName: "Sheela",
 		lastName: "Stefanija",
 		email: "sheela@gmail.com",
-		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",		
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [4, 6]
 	},
 	{
 		id: 8,
 		firstName: "Nilima",
 		lastName: "Fedelmid",
 		email: "nilima@gmail.com",
-		shortBio: "A personal trainer who enjoys watching television, working on cars and traveling.",		
-		rejected: [4, 9],
+		shortBio: "A personal trainer who enjoys watching television, working on cars and traveling.",
+		rejected: [9],
 		accepted: [7]
 	},
 	{
@@ -93,17 +94,17 @@ let students = [
 		firstName: "Methodius",
 		lastName: "Balendin",
 		email: "methodius@gmail.com",
-		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",		
-		skills: [tutorsSkillSet[4], tutorsSkillSet[3]],
+		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
+		skills: [4],
 		rejected: [],
-		accepted: []
+		accepted: [1, 10]
 	},
 	{
 		id: 10,
 		firstName: "Kumar",
 		lastName: "Lena",
 		email: "kumar@gmail.com",
-		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",		
+		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",
 		rejected: [4],
 		accepted: [7, 9]
 	},
