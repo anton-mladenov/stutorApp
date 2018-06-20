@@ -5,8 +5,8 @@ import './Results.css';
 import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
 
 class ResultsContainer extends PureComponent {
-  currentUserId = parseInt(this.props.match.params.currentuserid)
-  skillId = parseInt(this.props.match.params.skillid)
+  currentUserId = parseInt(this.props.match.params.currentuserid, 10)
+  skillId = parseInt(this.props.match.params.skillid, 10)
 
 
 

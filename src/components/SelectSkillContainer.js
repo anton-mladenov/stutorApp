@@ -8,6 +8,11 @@ export default class SelectSkill extends Component {
 	currentUserId = 1
 	skillIdNew = 3
 
+	testfunction = (i) => {
+		const val = i
+		console.log(val)
+	}
+
 	state = {
 		showMenu: false
 	}
@@ -18,7 +23,10 @@ export default class SelectSkill extends Component {
 	}
 
 	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <option key={skill.id} value={skill.id} className= "style-of-single-list"> {skill.name} </option>)
+		return (<select className= "style-drop-down-menu">
+		{tutorsSkillSet.map(skill => <option key={skill.id} value={skill.id} className= "style-of-single-list">{skill.name}</option>
+
+	)}</select>)
 	}
 
 
@@ -38,25 +46,18 @@ export default class SelectSkill extends Component {
       <br/>
       <div className="add-skill-container">
       <p className="title2">Find a tutor</p>
-      <select className= "style-drop-down-menu">
-     {this.showPredefinedSkills()}
-      </select>
-      <br/>
-      <br/>
+</div>
 
-      {
-				this.state.showMenu ?
-				<div className="searchOptionsMenu">
-					{this.showPredefinedSkills()}
-				</div>
-				: null
-			}
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <button className='black-button'> <Link to={`/results/${this.currentUserId}/${this.skillIdNew}/`} className="link-text">GO!</Link>< /button>
+
+
+
+
+
+
+
+
+
+
       <br/>
       <br/>
       <br/>
