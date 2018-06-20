@@ -23,7 +23,7 @@ export default function ResultsUserContainer (props) {
           <p className="results-user-container-skill-text" >{ getSkill(skillId, skills) }</p>
         </div>
         <div className="results-user-container-photo">
-          <img className="results-user-container-photo-img" src={ testProfile } alt="name"/>
+          <img className="results-user-container-photo-img" src={ stutor.profilepic } alt="name"/>
         </div>
         <div className="results-user-container-name">
           <p className="results-user-container-name-text">{ stutor.firstName }</p>
