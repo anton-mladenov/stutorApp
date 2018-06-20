@@ -2,26 +2,10 @@
 
 // Import the action creator constants NEW_GAME and MAKE_GUESS
 import { ADD_USER } from '../actions/stutor'
-
-//import { students } from '../userData/usersDummyData'
-
-const usersTemp = [
-  {
-    id: 1,
-    firstName: "Hilargi",
-    lastName: "Alecto",
-    emailAddress: "hilargi@gmail.com",
-    shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
-    skills: {id:1,skill:'music'},
-    rejected: [],
-    accepted: []
-  }
-]
-
-const initialState = usersTemp
+import { allUsers } from "../usersData/usersDummyData"
 
 // Define the state tranformation actions
-const reducer = (state = initialState, action = {}) => {
+const reducer = (state = allUsers, action = {}) => {
   console.log(state,'store state')
   console.log(action,'action')
   switch (action.type) {
