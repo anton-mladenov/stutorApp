@@ -2,7 +2,6 @@ import React from 'react'
 import './Results.css';
 import ResultsButtonAccept from './ResultsButtonAccept'
 import ResultsButtonReject from './ResultsButtonReject'
-import testProfile from '../usersData/test-profile.jpg'
 import { getSkill, isTutor } from '../lib/matching.js'
 
 export default function ResultsUserContainer (props) {
