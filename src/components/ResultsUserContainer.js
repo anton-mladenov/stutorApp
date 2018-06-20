@@ -12,13 +12,18 @@ export default function ResultsUserContainer (props) {
   const getSkill = (skillId, skills) => {
     return skills.filter(a => a.id === skillId)[0].name
   }
-
-
+  const isTutor = (userId, stutors) => {
+    if(stutors.filter(a => a.id === userId)[0].skills.length > 0) {
+      return "TUTOR"
+    } else {
+      return "STUDENT"
+    }
+  }
   return (
     stutors.map(stutor =>
       <div className="results-user-container" key={ stutor.id }>
         <div className="results-user-container-type">
-          <p className="results-user-container-type-text">TUTOR</p>
+          <p className="results-user-container-type-text">{ isTutor(stutor.id, stutors) }</p>
         </div>
         <div className="results-user-container-skill">
           <p className="results-user-container-skill-text" >{ getSkill(skillId, skills) }</p>
