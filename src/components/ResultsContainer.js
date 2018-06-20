@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import ResultsUserContainer from './ResultsUserContainer'
 import './Results.css';
 import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
+import { addAccepted } from '../actions/stutor'
 
 class ResultsContainer extends PureComponent {
   currentUserId = 1
@@ -11,7 +12,13 @@ class ResultsContainer extends PureComponent {
 
   showSelectedUsers = (selectedUsers) => {
     if (selectedUsers.length > 0) {
-      return <ResultsUserContainer selectedUsers = { this.selectedUsers }data={ this.props.data } skillId= { this.skillId } currentUserId = { this.currentUserId }/>
+      return <ResultsUserContainer
+        selectedUsers = { this.selectedUsers }
+        data={ this.props.data }
+        skillId= { this.skillId }
+        currentUserId = { this.currentUserId }
+        addAccepted = { addAccepted }
+      />
     } else {
       return <p>nothing to see here</p>
     }
@@ -33,4 +40,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ResultsContainer)
+export default connect(mapStateToProps, { addAccepted })(ResultsContainer)

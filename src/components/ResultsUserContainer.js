@@ -35,8 +35,8 @@ export default function ResultsUserContainer (props) {
           <p className="results-user-container-bio-text">{ stutor.shortBio }</p>
         </div>
         <div className="results-buttons-container">
+          <ResultsButtonAccept currentUserId={ currentUserId } addAccepted={ props.addAccepted } userId={ stutor.id }/>
           <ResultsButtonReject currentUserId={ currentUserId }/>
-          <ResultsButtonAccept currentUserId={ currentUserId }/>
         </div>
       </div>
     )
