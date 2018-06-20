@@ -20,7 +20,7 @@ class App extends Component {
 		    <Route exact path="/" component={ LandingContainer } />
 		      <Route exact path="/profile" component={ ProfileContainer } />
       		<Route exact path="/homedash" component={ HomeDashContainer } />
-      <Route exect path="/results/" component={ResultsContainer} />
+          <Route path="/results/:currentuserid/:skillid" component={ResultsContainer} />
       		<Route exact path="/selectskill" component={ SelectSkillContainer } />
       		<Route exact path="/addskill" component={ AddSkillContainer } />
 	         {/* <Route exact path="/search" component={SearchBar} /> */}

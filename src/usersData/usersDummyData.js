@@ -20,7 +20,7 @@ export const allUsers = [
 		lastName: "Alecto",
 		emailAddress: "hilargi@gmail.com",
 		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
-		skills: [],
+		skills: [2],
 		rejected: [4],
 		accepted: [7,9],
 		profilepic: "http://manne.pro/stutor/1.jpg"

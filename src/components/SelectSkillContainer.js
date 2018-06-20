@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import background from '../lib/background.png';
 import { Link } from 'react-router-dom'
 import './SelectSkillContainer.css';
 import {tutorsSkillSet} from "../usersData/usersDummyData"
 
 export default class SelectSkill extends Component {
 
-
+	currentUserId = 1
+	skillIdNew = 3
 
 	state = {
 		showMenu: false
@@ -18,7 +18,7 @@ export default class SelectSkill extends Component {
 	}
 
 	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <option key={skill.id} className= "style-of-single-list"> {skill.name} </option>)
+		return tutorsSkillSet.map(skill => <option key={skill.id} value={skill.id} className= "style-of-single-list"> {skill.name} </option>)
 	}
 
 
@@ -56,7 +56,7 @@ export default class SelectSkill extends Component {
       <br/>
       <br/>
       <br/>
-      <button className='black-button'> <Link to={`/results`} className="link-text">GO!</Link>< /button>
+      <button className='black-button'> <Link to={`/results/${this.currentUserId}/${this.skillIdNew}/`} className="link-text">GO!</Link>< /button>
       <br/>
       <br/>
       <br/>
