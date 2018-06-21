@@ -6,6 +6,8 @@ import {tutorsSkillSet} from "../usersData/usersDummyData"
 
 export default class SelectSkill extends Component {
 
+	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
+
 	state = {
          selected: ""
      }
@@ -21,7 +23,7 @@ export default class SelectSkill extends Component {
 
 
 	showPredefinedSkills = () => {
-		return tutorsSkillSet.map(skill => <button key={skill.id} value={skill.id} onClick={this.handleClick} className='button-select2 shake'><Link to={`/results/11/${skill.id}`} className="link-text"> {skill.name}</Link> </button>)
+		return tutorsSkillSet.map(skill => <button key={skill.id} value={skill.id} onClick={this.handleClick} className='button-select2 shake'><Link to={`/results/${this.currentUserId}/${skill.id}`} className="link-text"> {skill.name}</Link> </button>)
 	}
 
 

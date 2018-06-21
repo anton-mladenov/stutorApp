@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Home.css";
+import { Route, Link  } from 'react-router-dom'
 
 export default class componentName extends Component {
   render() {
@@ -17,7 +18,7 @@ export default class componentName extends Component {
 		</div>
 
 		<div className="createProfile">
-			<p className="createProfileText"> Create A Profile </p>
+			<Link to='/landing'> <p className="createProfileText"> Start </p> </Link>
 		</div>
 
 		<div className="loginDiv">
