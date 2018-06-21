@@ -4,6 +4,9 @@ import ResultsUserContainer from './ResultsUserContainer'
 import './Results.css';
 import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
 import { addAccepted } from '../actions/stutor'
+import  dashboardIcon from '../lib/icon-dashboard.png'
+import  backIcon from '../lib/icon-back.png'
+import { Link } from 'react-router-dom'
 
 export class ResultsContainer extends PureComponent {
   currentUserId = parseInt(this.props.match.params.currentuserid, 10)
@@ -18,9 +21,8 @@ export class ResultsContainer extends PureComponent {
         selectedUsers = { this.selectedUsers }
         data={ this.props.data }
         skillId= { this.skillId }
-        currentUserId = {1}
+        currentUserId = {this.currentUserId}
         addAccepted = { addAccepted }
-        getNoProxy = {this.getNoProxy}
       />
     } else {
       return <p>nothing to see here</p>
@@ -30,9 +32,20 @@ export class ResultsContainer extends PureComponent {
   render () {
     return (
       <div className="results-container">
+        <div className="results-user-container-nav">
+          <Link to="/selectskill" >
+            <img src={ backIcon } alt="Go Back" className="results-container-backicon"/>
+          </Link>
+          <Link to="/homedash" >
+            <img src={ dashboardIcon } alt="Go To Dashboard" className="results-container-dashboardicon"/>
+          </Link>
+        </div>
+        <div className="results-user-container-nav-border"></div>
         { this.showSelectedUsers(this.selectedUsers)
         }
       </div>
+
+
     )
   }
 

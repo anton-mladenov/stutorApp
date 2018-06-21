@@ -1,14 +1,15 @@
 import React from 'react'
 import './Results.css';
 import { getSkill, isTutor } from '../lib/matching.js'
-
 export default function ResultsUserContainer (props) {
 
   const skills = props.data.skills
   const selectedUsers = props.selectedUsers
   const skillId = props.skillId
 
-
+  const handleClick = (param1, param2) => (e) => {
+    props.addAccepted(1, param2)
+  }
   return (
 
     selectedUsers.map(stutor =>
@@ -39,7 +40,7 @@ export default function ResultsUserContainer (props) {
         </div>
 
         <div className="results-buttons-container">
-          <span className="results-button results-button-ok"></span>
+          <span className="results-button results-button-ok" onClick={ handleClick(props.currentUserId, stutor.id) }></span>
           <span className="results-button results-button-no"></span>
         </div>
       </div>

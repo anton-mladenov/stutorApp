@@ -1,8 +1,42 @@
 /* font-family: 'Poppins', sans-serif;
 font-family: 'Muli', sans-serif; */
 
-.results-user-container {
+.results-container {
   padding:  20px;
+}
+.results-user-container-nav {
+  display: flex;
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background-image: url("../lib/background.png");
+  background-color: #FFFFFF;
+}
+.results-container-backicon {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.results-container-dashboardicon {
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.results-user-container-nav-border {
+  text-align: left;
+  position: fixed;
+  padding-left: 20px;
+  top: 40px;
+  left: 0;
+  height: 15px;
+  width: 100%;
+  background-image: url("../lib/background.png");
+  background: linear-gradient(#FFFFFF, transparent);
+}
+.results-user-container {
+  padding-top:30px;
+
 }
 
 .results-user-container-type {
