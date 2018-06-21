@@ -77,7 +77,7 @@ class LandingContainer extends Component {
       <h2 className="title4">Create a profile by clicking button below</h2>
       <Link to='/profile'>
         <button class='button-blue' type="button" >
-              Create a Profile
+      Create a Profile
         </button>
       </Link>
       <br/><br/>
