@@ -7,10 +7,19 @@ export const getTutorsWithSkillId = (skillId, allUsers) => {
     .filter(skilledUser => skilledUser.skills.includes(skillId))
 }
 export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUsers) => {
-  return  getTutorsWithSkillId(skillId, allUsers)
-    .filter(user => !user.accepted.includes(currentUserId) && !user.rejected.includes(currentUserId)
-			 )
+  const accepted = allUsers.filter(user => user.id === currentUserId)[0].accepted
+  const rejected = allUsers.filter(user => user.id === currentUserId)[0].rejected
+  console.log(accepted)
+  console.log(rejected)
+  console.log(rejected.concat(accepted))
+  return  getTutorsWithSkillId(skillId, allUsers).filter(a => {
+    const result = !rejected.concat(accepted).includes(a.id)
+    console.log(result)
+    return result
+  })
 }
+
+
 export const waitingForAcceptance = (currentUserId, allUsers) => {
 console.log(allUsers)
   return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))

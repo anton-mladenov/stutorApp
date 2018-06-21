@@ -11,12 +11,11 @@ import { Link } from 'react-router-dom'
 export class ResultsContainer extends PureComponent {
   currentUserId = parseInt(this.props.match.params.userid, 10)
   skillId = parseInt(this.props.match.params.skillid, 10)
-  selectedUsers = getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor)
 
   showSelectedUsers = (selectedUsers) => {
-    if (selectedUsers.length > 0) {
+    if (getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor).length > 0) {
       return <ResultsUserContainer
-        selectedUsers = { this.selectedUsers }
+        selectedUsers = { getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor) }
         data={ this.props.data }
         skillId= { this.skillId }
         currentUserId = {this.currentUserId}
@@ -29,7 +28,6 @@ export class ResultsContainer extends PureComponent {
   }
 
   render () {
-    console.log(addAccepted, this.props.addAccepted);
     return (
       <div className="results-container">
         <div className="results-user-container-nav">

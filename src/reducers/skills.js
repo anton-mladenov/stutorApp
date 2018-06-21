@@ -8,13 +8,12 @@ import { tutorsSkillSet } from "../usersData/usersDummyData"
 
 // Define the state tranformation actions
 const reducer = (state = tutorsSkillSet, action = {}) => {
-  console.log("logging to the console FROM THE REDUCER!")
   switch (action.type) {
 //   case ADD_SKILL:
 //     // Add the new skill to the skills object array
 //     // return [...state, action.payload]
 // 	console.log("logging to the console FROM THE REDUCER FROM THE ADD_SKILL! CASE")
-	
+
 // 	return [...state, doMagic(action.payload.skill, action.payload.userId)]
 
   default:
