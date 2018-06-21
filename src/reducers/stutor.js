@@ -11,24 +11,19 @@ const reducer = (state = allUsers, action = {}) => {
   case ADD_USER:
     return [...state, action.payload]
   case ADD_ACCEPT:
-    const tempState = [...state]
-    const targetUser = tempState.filter(user => user.id === action.payload.currentUserId)
-    const targetUserIndex = tempState.findIndex(a => a.id === action.payload.currentUserId)
-    const updatedUser = update(targetUser, [{accepted: {$push: [action.payload.userId]}}])
-    tempState.push(updatedUser[0])
-    tempState.splice(targetUserIndex, 1)
-    return tempState
-
-
+    // const tempState = [...state]
+    // const targetUser = tempState.filter(user => user.id === action.payload.currentUserId)
+    // const targetUserIndex = tempState.findIndex(a => a.id === action.payload.currentUserId)
+    // const updatedUser = update(targetUser, [{accepted: {$push: [action.payload.userId]}}])
+    // tempState.push(updatedUser[0])
+    // tempState.splice(targetUserIndex, 1)
+    // return update(state.filter(a => a.id === action.payload.currentUserId).reduce((a,b) => b), {accepted: {$push: [action.payload.userId]}})
+    const currentUserIndex = state.findIndex(a => a.id === action.payload.currentUserId)
+    return update(state, {[currentUserIndex]:{accepted: {$push: [action.payload.userId]}}})
 
   case ADD_REJECT:
-    // const tempState1 = [...state]
-    // const targetUser1 = tempState1.filter(user => user.id === action.payload.currentUserId)
-    // const targetUserIndex1 = tempState1.findIndex(a => a.id === action.payload.currentUserId)
-    // const updatedUser1 = update(targetUser1, [{accepted: {$push: [action.payload.userId]}}])
-    // tempState.push(updatedUser1[0])
-    // tempState.splice(targetUserIndex1, 1)
-    // return tempState
+    const currentUserIndex1 = state.findIndex(a => a.id === action.payload.currentUserId)
+    return update(state, {[currentUserIndex1]:{rejected: {$push: [action.payload.userId]}}})
   default:
     return state
   }
