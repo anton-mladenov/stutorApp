@@ -32,7 +32,7 @@ export const allUsers = [
 		emailAddress: "keara@gmail.com",
 		shortBio: "I am a 61-year-old CEO who enjoys donating blood, jigsaw puzzles and adult colouring books.",
 		skills: [1],
-		rejected: [7, 4],
+		rejected: [7],
 		accepted: [9],
 		profilepic: "http://manne.pro/stutor/2.jpg"
 	},
