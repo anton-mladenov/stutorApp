@@ -33,10 +33,10 @@ export class ResultsContainer extends PureComponent {
     return (
       <div className="results-container">
         <div className="results-user-container-nav">
-          <Link to="/selectskill" >
+          <Link to={`/selectskill/${this.currentUserId}`}>
             <img src={ backIcon } alt="Go Back" className="results-container-backicon"/>
           </Link>
-          <Link to="/homedash" >
+          <Link to={`/homedash/${this.currentUserId}`} >
             <img src={ dashboardIcon } alt="Go To Dashboard" className="results-container-dashboardicon"/>
           </Link>
         </div>
