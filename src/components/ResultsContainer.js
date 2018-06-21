@@ -9,12 +9,10 @@ import  backIcon from '../lib/icon-back.png'
 import { Link } from 'react-router-dom'
 
 export class ResultsContainer extends PureComponent {
-  currentUserId = parseInt(this.props.match.params.currentuserid, 10)
+  currentUserId = parseInt(this.props.match.params.userid, 10)
   skillId = parseInt(this.props.match.params.skillid, 10)
   selectedUsers = getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor)
-  getNoProxy = (i) => {
-    console.log(i)
-  }
+
   showSelectedUsers = (selectedUsers) => {
     if (selectedUsers.length > 0) {
       return <ResultsUserContainer
