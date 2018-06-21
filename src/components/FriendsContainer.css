@@ -1,22 +1,93 @@
-.button-go {
-  background-color: #4CAF50; /* Green */
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
+
+
+.title3 {
+  color:         #F77171;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   bold;
+  font-size:     30px;
+  margin:0;
+  padding:  0px;
+  line-height: 80%;
+  text-align: center;
+  font-weight: 180;
+  padding-top: 30px;
+  padding-bottom:  30px;
+  line-height: 100%;
+}
+
+.coolName {
+  font-family:   'Poppins', sans-serif;
+   font-style: bold;
+  font-weight:   600;
+  list-style-type: none;
+  font-size: 25px;
 
 }
-.button-no {
-  background-color: red; /* Green */
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
 
+.button-go {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   200;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 20px;
+padding: 20px;
+}
+
+.button-no {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   200;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  padding-left: 20px;
+}
+
+.button-chat {
+  background-color:  #5E93DB;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: justify;
+  text-decoration: none;
+  display: inline-block;
+  font-family:   'Poppins', sans-serif;
+  font-weight:   200;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  
 }

@@ -17,7 +17,12 @@
 	font-family:   'Poppins', sans-serif;
 	font-weight:   bold;
 	font-size:     80px;
-	color: white;
+	color: #ffffff00;
+	background-image: url("../lib/logo-text.png");
+	background-size: cover;
+	padding: 0px;
+	position: relative;
+
 }
 
 .taglineDiv {
@@ -29,18 +34,22 @@
 .meet {
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
+	font-size: 40px;
 	color: #f77171
+
 }
 
 .learn {
 	font-family:   'Poppins', sans-serif;
 	font-weight:   bold;
-	color: #5e93db 
+	font-size: 40px;
+	color: #5e93db
 }
 
 .teach {
 	font-family:   'Poppins', sans-serif;
 	font-weight:   bold;
+	font-size: 40px;
 	color: #8ae0ad
 }
 
@@ -62,10 +71,13 @@
 }
 
 .createProfileText {
-	color: #555555;
+	color: white;
+	text-decoration: inherit;
 	font-family:   'Poppins', sans-serif;
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: 100;
+	text-align: center;
+
 }
 
 .loginDiv {
@@ -77,4 +89,5 @@
 	font-family:   'Poppins', sans-serif;
 	font-size: 17px;
 	font-weight: 100;
+	text-decoration: none;
 }
