@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ResultsUserContainer from './ResultsUserContainer'
 import './Results.css';
 import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
-import { addAccepted } from '../actions/stutor'
+import { addAccepted, addRejected } from '../actions/stutor'
 import  dashboardIcon from '../lib/icon-dashboard.png'
 import  backIcon from '../lib/icon-back.png'
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ export class ResultsContainer extends PureComponent {
         data={ this.props.data }
         skillId= { this.skillId }
         currentUserId = {this.currentUserId}
-        addAccepted = { addAccepted }
+        addAccepted = { this.props.addAccepted }
       />
     } else {
       return <p>nothing to see here</p>
@@ -28,6 +28,7 @@ export class ResultsContainer extends PureComponent {
   }
 
   render () {
+    console.log(addAccepted, this.props.addAccepted);
     return (
       <div className="results-container">
         <div className="results-user-container-nav">
@@ -54,4 +55,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addAccepted })(ResultsContainer)
+export default connect(mapStateToProps, { addAccepted, addRejected })(ResultsContainer)
