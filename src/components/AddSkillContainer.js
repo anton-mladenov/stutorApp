@@ -11,14 +11,8 @@ const user11 = {
 
 export class AddSkillContainer extends Component {
 
-	// showSkills = () => {
-	// 	return this.props.skills.map(skill =>
-	// 	<div key={skill.id}>
-	// 	<h6> {skill.name} </h6>
-	// 	<button className="addSkillButton" onClick={this.addNewSkill(skill.id)}> + </button>
-	// 	</div>
-	// 	)
-	// }
+	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
+
 	state = {
 		showMenu: false,
 		selected: ""
@@ -59,7 +53,7 @@ export class AddSkillContainer extends Component {
 				</label>
 			</div>
 			<br/>
-			<button className = "black-button">GO!</button>
+			<button className = "black-button"><Link to={`/homedash/${this.currentUserId}`}> <p className= "link-text">GO!</p> </Link> </button>
 			<div className= "footer">
 			</div>
      </div>

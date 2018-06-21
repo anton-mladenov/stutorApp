@@ -37,6 +37,7 @@
     margin: 4px 2px;
     cursor: pointer;
   border-radius: 50%;
+  position: absolute;
 }
 
 .button-dash2 {
@@ -56,10 +57,75 @@
     margin: 4px 2px;
     cursor: pointer;
   border-radius: 50%;
+  position: absolute;
+
+}
+
+.button-dash3 {
+  background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family:   'Poppins', sans-serif;
+    font-weight:   900;
+    font-size:     20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 50%;
+    margin-top: 50%;
+    cursor: pointer;
+  border-radius: 50%;
+  padding: 0px;
+  position: absolute;
+
+}
+
+.button-dash4 {
+  background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family:   'Poppins', sans-serif;
+    font-weight:   900;
+    font-size:     20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 50%;
+    margin-top: 50%;
+    cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  padding: 0px;
+}
+
+.containerbubbles {
+  height: 200px;
+  width: 200px;
+  position: relative;
 }
 
 .link-text {
  text-decoration: none;
  color: white;
- font-size: 80px;
+ font-size: 15px;
+}
+
+.link-text-small{
+ text-decoration: none;
+ color: white;
+ font-size: 15px;
+}
+
+.footer{
+  padding-top: 90px;
+  padding-bottom: 90px;
+  height: 80px;
 }
