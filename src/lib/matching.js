@@ -12,6 +12,7 @@ export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUs
 			 )
 }
 export const waitingForAcceptance = (currentUserId, allUsers) => {
+console.log(allUsers)
   return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))
 }
 export const matchLogic = (currentUserId, allUsers) => {

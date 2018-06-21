@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import FriendsCurrent from "./FriendsCurrent"
 import { Route, Link  } from 'react-router-dom'
 import {getNameofStudentsToBeAccepted,matchLogic,waitingForAcceptance} from '../lib/matching'
 import { connect } from 'react-redux'
 import {addAccepted} from '../actions/stutor'
+
 
 
  class FriendsContainer extends Component {

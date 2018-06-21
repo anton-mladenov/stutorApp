@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './HomeDashContainer.css';
-import background from '../lib/background.png';
+// import background from '../lib/background.png';
 import { Link } from 'react-router-dom';
 import './HomeDashContainer.css';
 import {waitingForAcceptance} from '../lib/matching'
@@ -11,6 +11,7 @@ export  class HomeDashContainer extends Component {
 	waiting = waitingForAcceptance(9, this.props.data).length
 
   render() {
+	  console.log(this.props.data)
 	return (
 
     <div className="home-dash-container">
