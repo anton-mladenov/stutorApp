@@ -35,7 +35,6 @@ class App extends Component {
         {/* <Link to="/dashboard">Go back to the dashboard</Link> */}
 		<Link to="/search"> Look For Some New Skills To Learn </Link>
 
-
       </div>
     );
   }
