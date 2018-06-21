@@ -13,14 +13,6 @@ export class AddSkillContainer extends Component {
 
 	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
 
-	// showSkills = () => {
-	// 	return this.props.skills.map(skill =>
-	// 	<div key={skill.id}>
-	// 	<h6> {skill.name} </h6>
-	// 	<button className="addSkillButton" onClick={this.addNewSkill(skill.id)}> + </button>
-	// 	</div>
-	// 	)
-	// }
 	state = {
 		showMenu: false,
 		selected: ""
