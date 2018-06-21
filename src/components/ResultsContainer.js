@@ -21,6 +21,7 @@ export class ResultsContainer extends PureComponent {
         skillId= { this.skillId }
         currentUserId = {this.currentUserId}
         addAccepted = { this.props.addAccepted }
+        addRejected = { this.props.addRejected }
       />
     } else {
       return <p>nothing to see here</p>
