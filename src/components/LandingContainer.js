@@ -17,16 +17,12 @@ class LandingContainer extends Component {
 
   handleChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
-
     this.setState({
       emailAddress: value
     });
-    //console.log(this.state,'state')
   }
 
   handleSubmit = (event) => {
-
     event.preventDefault()
     console.log(this.props.users,'props users')
     let emailUserId
@@ -36,6 +32,7 @@ class LandingContainer extends Component {
           emailUserId=user.id
           return user
         }
+        else return null
       }).length === 1) {
         console.log('email match')
         console.log(emailUserId,'emailUserid')
@@ -46,7 +43,6 @@ class LandingContainer extends Component {
       }
       else {
         this.setState({message: 'email address unknown, please retry'})
-        console.log('email does not match')
       }
     }
   }
@@ -57,29 +53,32 @@ class LandingContainer extends Component {
     }
     return (
       <div>
-      <div className="title-container-2">
-      <h2 className="title3">Log in with your email address </h2>
-      </div>
-      <form id='loginform' onSubmit={this.handleSubmit}>
-      <div className="container-email-form">
-        <label>
-          <p classname="email-text">Email address</p>
-          <input type="text" name="emailAddress" className= "input" onChange={this.handleChange}/>
-        </label>
+        <div className="title-container-2">
+          <h2 className="title3">Log in with your email address </h2>
         </div>
-        <br/>
-        <div>{this.state.message}</div>
-        <br/>
-
-        <input class="button" type="submit" value="Log in"/>
-        <br/>
-      </form>
-      <h4 >or</h4>
-      <h2 className="title4">Create a profile by clicking button below</h2>
-      <Link to='/profile'><button class='button-blue' type="button" >Create a Profile</button></Link>
-      <br/><br/>
-      <div className="footer">
-      </div>
+        <form id='loginform' onSubmit={this.handleSubmit}>
+          <div className="container-email-form">
+            <label>
+              <p classname="email-text">Email address</p>
+              <input type="text" name="emailAddress" className= "input" onChange={this.handleChange}/>
+            </label>
+          </div>
+          <br/>
+          <div>{this.state.message}</div>
+          <br/>
+          <input class="button" type="submit" value="Log in"/>
+          <br/>
+        </form>
+        <h4 >or</h4>
+        <h2 className="title4">Create a profile by clicking button below</h2>
+        <Link to='/profile'>
+          <button class='button-blue' type="button" >
+                Create a Profile
+          </button>
+        </Link>
+        <br/><br/>
+        <div className="footer">
+        </div>
       </div>
     )
   }
@@ -87,13 +86,10 @@ class LandingContainer extends Component {
 
 const mapStateToProps = (state) => {
   // Map the store state allUsers to the local prop users
-  console.log(state,'map state')
   return {
     users: state.stutor
   }
 }
 
-// Bind Redux store updates to the function mapStateToProps and
-// bind the action creators newGame and makeGuess
-// so we can use it as props in the HangmanContainer component
+// Bind Redux store updates to the function mapStateToProps
 export default connect(mapStateToProps) (LandingContainer)
