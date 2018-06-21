@@ -20,7 +20,7 @@ export const allUsers = [
 		lastName: "Alecto",
 		emailAddress: "hilargi@gmail.com",
 		shortBio: "I am a 47-year-old associate at a law firm who enjoys listening to music, jigsaw puzzles and baking.",
-		skills: [],
+		skills: [1],
 		rejected: [4],
 		accepted: [7,9],
 		profilepic: "http://manne.pro/stutor/1.jpg"
@@ -110,7 +110,7 @@ export const allUsers = [
 		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
 		skills: [4],
 		rejected: [],
-		accepted: [1, 10],
+		accepted: [2, 10],
 		profilepic: "http://manne.pro/stutor/9.jpg"
 	},
 	{

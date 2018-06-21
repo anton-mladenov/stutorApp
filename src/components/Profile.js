@@ -56,7 +56,9 @@ export default class Profile extends React.PureComponent {
       this.setState({redirect: true})
     }
     else {
-      this.setState({message: 'Please fill in all the fields'})
+      this.setState({
+        message: 'Please fill in all the fields'
+      })
     }
 
   }
@@ -67,47 +69,39 @@ export default class Profile extends React.PureComponent {
     }
     return (
       <div>
-      <div className="home-dash-container">
-      <div className = "title-container-new">
-      <h2 className="title3">Fill in your Profile Info </h2>
-      </div>
-      <form id='userform' onSubmit={this.handleSubmit} className="form">
-        <label>
-          <p>First Name</p>
-          <input type="text" name="firstName" className="input" required onChange={this.handleChange} />
-        </label>
-        <br/>
-        <br/>
-        <label>
-          <p>Last Name</p>
-          <input type="text" name="lastName" className="input" onChange={this.handleChange} />
-        </label>
+        <div className="home-dash-container">
+          <div className = "title-container-new">
+            <h2 className="title3">Fill in your Profile Info </h2>
+          </div>
+          <form id='userform' onSubmit={this.handleSubmit} className="form">
+            <label>
+              <p>First Name</p>
+              <input type="text" name="firstName" className="input" autocomplete='given-name' onChange={this.handleChange} />
+            </label>
+            <br/>
+            <br/>
+            <label>
+              <p>Last Name</p>
+              <input type="text" name="lastName" className="input" autocomplete='family-name' onChange={this.handleChange} />
+            </label>
+            <br/>
+            <br/>
+            <label>
+              <p>Email Address</p>
+              <input type="text" name="emailAddress" className="input" autocomplete='email' onChange={this.handleChange} />
+            </label>
+            <br/>
+          </form>
           <br/>
-        <br/>
-        <label>
-          <p>Email Address</p>
-          <input type="text" name="emailAddress" className="input"onChange={this.handleChange} />
-        </label>
+          <textarea rows="4" cols="50" name="shortBio" form="userform" className= "biotext" onChange={this.handleChange}>                    Enter a short bio, please</textarea>
           <br/>
-      </form>
-      <br/>
-      <textarea rows="4" cols="50" name="shortBio" form="userform" className= "biotext" onChange={this.handleChange}>                    Enter a short bio, please</textarea>
-      <br/>
-      <div>{this.state.message}</div>
-      <br/>
-      <form id='just submit' onSubmit={this.handleSubmit}>
-          <input className="button" type="submit" value="Submit" />
-      </form>
-      <br/><br/>
-      {/*
-      <Link to={this.state.link}>
-          <button type="button" style={{fontSize: 20}}>
-               Find or become a Tutor
-          </button>
-      </Link>
-      <br/><br/>
-      */}
-      </div>
+          <div>{this.state.message}</div>
+          <br/>
+          <form id='just submit' onSubmit={this.handleSubmit}>
+            <input className="button" type="submit" value="Submit" />
+          </form>
+          <br/><br/>
+        </div>
       </div>
     )
   }
