@@ -7,7 +7,7 @@ import {addAccepted} from '../actions/stutor'
 
  class FriendsContainer extends Component {
 
-   currentUserId = parseInt(this.props.match.params.currentUserId, 10)
+   currentUserId1 = parseInt(this.props.match.params.currentUserId, 10)
 
    logIt = () => {
      console.log(waitingForAcceptance(2, this.props.data))
@@ -19,7 +19,9 @@ import {addAccepted} from '../actions/stutor'
 
   getAcceptedUsers = (currentUserId, allUsers) => {
      const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
-     return this.waitingForAcceptance2(currentUserId, allUsers).filter(a => currentUserAccepted.accepted.includes(a.id))
+     console.log(currentUserAccepted, 'currentUserAccepted')
+     //return this.waitingForAcceptance2(currentUserId, allUsers).filter(a => currentUserAccepted.accepted.includes(a.id))
+     return allUsers.filter(user => currentUserAccepted.accepted.includes(user.id))
    }
 
    // listOfFriends = getNameofStudentsToBeAccepted(this.currentUserId, this.props.data)
@@ -28,7 +30,9 @@ import {addAccepted} from '../actions/stutor'
    //   console.log(listOfFriends)
    //   return listOfFriends
    // }
-
+   handleClick = (param1, param2) => (e) => {
+     this.props.addAccepted(param1, param2)
+   }
 
 
     render() {
@@ -38,7 +42,7 @@ import {addAccepted} from '../actions/stutor'
 
 		    <h1>Student Waiting for Acceptance</h1>
         <ul>
-        { waitingForAcceptance(9, this.props.data)
+        { waitingForAcceptance(this.currentUserId1, this.props.data)
           .map(a => {
             return <li><button>{ a.firstName }</button></li>
           })
@@ -47,7 +51,7 @@ import {addAccepted} from '../actions/stutor'
         <br/>
         <h1>Accepted Students</h1>
          <ul>
-         {this.getAcceptedUsers( 9,this.props.data)
+         {this.getAcceptedUsers( this.currentUserId1,this.props.data)
          .map(a => {
            return <li>{a.firstName}</li>
          })}
@@ -65,4 +69,4 @@ import {addAccepted} from '../actions/stutor'
       }
     }
 
-export default connect(mapStateToProps)(FriendsContainer)
+export default connect(mapStateToProps, {addAccepted})(FriendsContainer)

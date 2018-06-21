@@ -110,7 +110,7 @@ export const allUsers = [
 		shortBio: "A chef at own restaurant who enjoys extreme ironing, eating out and adult colouring books",
 		skills: [4],
 		rejected: [],
-		accepted: [2, 10],
+		accepted: [2 , 10],
 		profilepic: "http://manne.pro/stutor/9.jpg"
 	},
 	{
