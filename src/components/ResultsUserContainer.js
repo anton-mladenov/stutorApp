@@ -10,6 +10,9 @@ export default function ResultsUserContainer (props) {
   const handleClick = (param1, param2) => (e) => {
     props.addAccepted(param1, param2)
   }
+  const handleClick1 = (param1, param2) => (e) => {
+    props.addRejected(param1, param2)
+  }
   return (
 
     selectedUsers.map(stutor =>
@@ -40,8 +43,8 @@ export default function ResultsUserContainer (props) {
         </div>
 
         <div className="results-buttons-container">
-          <span className="results-button results-button-ok" onClick={ handleClick(props.currentUserId, stutor.id) }></span>
-          <span className="results-button results-button-no"></span>
+          <button className="results-button results-button-ok" onClick={ handleClick(props.currentUserId, stutor.id) }/>
+          <button className="results-button results-button-no" onClick={ handleClick1(props.currentUserId, stutor.id) }/>
         </div>
       </div>
     )
