@@ -5,7 +5,7 @@ import './Results.css';
 import { getTutorsWithSkillIdAndNotAccepted } from '../lib/matching.js'
 import { addAccepted } from '../actions/stutor'
 
-class ResultsContainer extends PureComponent {
+export class ResultsContainer extends PureComponent {
   currentUserId = 1
   skillId = 1
   selectedUsers = getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor)

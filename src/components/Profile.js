@@ -96,7 +96,7 @@ export default class Profile extends React.PureComponent {
       <div>{this.state.message}</div>
       <br/>
       <form id='just submit' onSubmit={this.handleSubmit}>
-          <input class="button" type="submit" value="Submit" />
+          <input className="button" type="submit" value="Submit" />
       </form>
       <br/><br/>
       {/*
