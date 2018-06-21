@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './HomeDashContainer.css';
 import background from '../lib/background.png';
 import logo from '../lib/logo-text.png';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './HomeDashContainer.css';
 
 export default class HomeDashContainer extends Component {
 

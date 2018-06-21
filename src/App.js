@@ -7,8 +7,8 @@ import HomeDashContainer from "./components/HomeDashContainer"
 import ResultsContainer from "./components/ResultsContainer"
 import SelectSkillContainer from "./components/SelectSkillContainer"
 import AddSkillContainer from "./components/AddSkillContainer"
-// import ResultsContainer from './components/ResultsContainer'
 import SearchBarContainer from "./components/SearchBarContainer"
+// import ResultsContainer from './components/ResultsContainer'
 // import DashboardContainer from './components/DashboardContainer'
 
 
@@ -19,7 +19,7 @@ class App extends Component {
 		<Route exact path="/" component={LandingContainer} />
 		<Route exact path="/profile" component={ProfileContainer} />
 		<Route exact path="/homedash" component={HomeDashContainer} />
-    <Route path="/results/:userid/:skillid" component={ResultsContainer} />
+    	<Route path="/results/:userid/:skillid" component={ResultsContainer} />
 		<Route exact path="/selectskill" component={SelectSkillContainer} />
 		<Route exact path="/addskill" component={AddSkillContainer} />
 		<Route exact path="/search" component={SearchBarContainer} />

@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 
-.home-dash-container {
+.home-dash-container-select {
   padding:  20px;
   background-image: url('../lib/background.png');
   background-repeat: repeat;
 }
 
 
-.title {
+.title-select  {
   color:         #F77171;
   font-family:   'Poppins', sans-serif;
   font-weight:   bold;
@@ -19,7 +19,7 @@
   text-align: left;
 }
 
-.add-skill-container {
+.add-skill-container-select {
   margin: auto;
    width: 70%;
    height: 70%;
@@ -43,19 +43,20 @@
       margin: 0 auto;
 }
 
-.title2 {
+.title5 {
   color:         white;
   font-family:   'Poppins', sans-serif;
   font-weight:   bold;
-  font-size:     30px;
+  font-size:     25px;
   margin:0;
   padding: 30px;
   line-height: 80%;
   text-align: center;
+  line-height: 100%;
 }
 
-.black-button{
-  background-color: #8AE0AD;
+.button-select2{
+    background-color: #8AE0AD;
     border: none;
     color: white;
     padding: 20px;
@@ -63,32 +64,49 @@
     text-decoration: none;
     display: inline-block;
     font-family:   'Poppins', sans-serif;
-    font-weight:   800;
-    font-size:     25px;
-    height: 160px;
-    width: 160px;
+    font-weight:   200;
+    height: 110px;
+    width: 110px;
     border-radius: 50%;
     margin: 4px 2px;
     cursor: pointer;
-
-  border-radius: 50%;
+    padding: 0px;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
 }
+@-webkit-keyframes shake {
+            0%, 100% {-webkit-transform: translateX(0);}
+            10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+            20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+         }
+
+         @keyframes shake {
+            0%, 100% {transform: translateX(0);}
+            10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+            20%, 40%, 60%, 80% {transform: translateX(10px);}
+         }
+
+         .shake {
+            -webkit-animation-name: shake;
+            animation-name: shake;
+         }
 
 .style-of-single-list {
   background-color: #f9f9f9;
 }
+
 .link-text {
  text-decoration: none;
  color: white;
+ text-align: center;
+ font-size: 20px;
 }
 
-.select {
-    align-items: center;
-    white-space: pre;
-    background-color: white;
-    cursor: default;
-    border-width: 1px;
-    border-style: solid;
-    border-color: initial;
-    border-image: initial;
+.footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
