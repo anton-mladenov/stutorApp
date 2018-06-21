@@ -12,8 +12,7 @@ export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUs
 			 )
 }
 export const waitingForAcceptance = (currentUserId, allUsers) => {
-  return allUsers.map(user => user)
-  	.filter(allUsers => allUsers.accepted.includes(currentUserId))
+  return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))
 }
 export const matchLogic = (currentUserId, allUsers) => {
   const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
