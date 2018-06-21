@@ -3,7 +3,8 @@ import FriendsCurrent from "./FriendsCurrent"
 import { Route, Link  } from 'react-router-dom'
 import {getNameofStudentsToBeAccepted,matchLogic,waitingForAcceptance} from '../lib/matching'
 import { connect } from 'react-redux'
-import {addAccepted} from '../actions/stutor'
+import {addAccepted, addRejected} from '../actions/stutor'
+import './FriendsContainer.css'
 
 
 
@@ -35,7 +36,9 @@ import {addAccepted} from '../actions/stutor'
    handleClick = (param1, param2) => (e) => {
      this.props.addAccepted(param1, param2)
    }
-
+handleClickNo = (param1, param2) => (e) => {
+  this.props.addRejected(param1, param2)
+}
 
     render() {
 	   return (
@@ -46,7 +49,7 @@ import {addAccepted} from '../actions/stutor'
         <ul>
         { waitingForAcceptance(this.currentUserId1, this.props.data)
           .map(a => {
-            return <li><button>{ a.firstName }</button></li>
+            return <li>{ a.firstName }<button value="GO" className="button-go" onClick={ this.handleClick(this.currentUserId1, a.id) }/> <button value="NO" className="button-no" onClick={ this.handleClickNo(this.currentUserId1, a.id) }/></li>
           })
         }
         </ul>
@@ -55,7 +58,7 @@ import {addAccepted} from '../actions/stutor'
          <ul>
          {this.getAcceptedUsers( this.currentUserId1,this.props.data)
          .map(a => {
-           return <li>{a.firstName}</li>
+           return <div><li>{ a.firstName } </li></div>
          })}
          </ul>
         </div>
@@ -71,4 +74,4 @@ import {addAccepted} from '../actions/stutor'
       }
     }
 
-export default connect(mapStateToProps, {addAccepted})(FriendsContainer)
+export default connect(mapStateToProps, {addAccepted, addRejected})(FriendsContainer)
