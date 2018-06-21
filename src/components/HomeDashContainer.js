@@ -7,8 +7,10 @@ import {waitingForAcceptance} from '../lib/matching'
 import { connect } from 'react-redux'
 
 export  class HomeDashContainer extends Component {
+
 	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
-	waiting = waitingForAcceptance(9, this.props.data).length
+
+	waiting = this.props.data.filter(a => a.id === this.currentUserId).reduce((acc, val) => val).accepted.length
 
   render() {
 	  console.log(this.props.data)
@@ -28,7 +30,7 @@ export  class HomeDashContainer extends Component {
       <br/>
       <div className="containerbubbles">
       <button className= "button-dash"><Link to={`/selectskill/${this.currentUserId}`} className="link-text"> Find a tutor</Link> </button>
-      <button className= "button-dash3"><Link to={`/homedash`} className="link-text-small"> 1 Match </Link> </button>
+      <button className= "button-dash3"><Link to={`/homedash/${this.currentUserId}`} className="link-text-small"> 0 Match </Link> </button>
       </div>
       <br/>
       <br/>
