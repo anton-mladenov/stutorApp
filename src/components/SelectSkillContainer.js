@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import background from '../lib/background.png';
+// import background from '../lib/background.png';
 import { Link } from 'react-router-dom'
 import './SelectSkillContainer.css';
 import {tutorsSkillSet} from "../usersData/usersDummyData"

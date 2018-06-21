@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './HomeDashContainer.css';
-import background from '../lib/background.png';
+// import background from '../lib/background.png';
 import { Link } from 'react-router-dom';
 import './HomeDashContainer.css';
 

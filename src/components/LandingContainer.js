@@ -17,7 +17,7 @@ class LandingContainer extends Component {
 
   handleChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
+    // const name = event.target.name;
 
     this.setState({
       emailAddress: value
@@ -28,7 +28,7 @@ class LandingContainer extends Component {
   handleSubmit = (event) => {
 
     event.preventDefault()
-    console.log(this.props.users,'props users')
+    // console.log(this.props.users,'props users')
     let emailUserId
     if (this.state.emailAddress) {
       if (this.props.users.filter(user=> {
@@ -37,8 +37,8 @@ class LandingContainer extends Component {
           return user
         }
       }).length === 1) {
-        console.log('email match')
-        console.log(emailUserId,'emailUserid')
+        // console.log('email match')
+        // console.log(emailUserId,'emailUserid')
         this.setState({
           link: 'homedash/' + emailUserId
         })
@@ -46,7 +46,7 @@ class LandingContainer extends Component {
       }
       else {
         this.setState({message: 'email address unknown, please retry'})
-        console.log('email does not match')
+        // console.log('email does not match')
       }
     }
   }

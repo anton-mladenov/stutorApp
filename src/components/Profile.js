@@ -56,7 +56,7 @@ export default class Profile extends React.PureComponent {
       this.setState({redirect: true})
     }
     else {
-      this.state.message='Please fill in all the fields'
+      this.setState({message: 'Please fill in all the fields'})
     }
 
   }

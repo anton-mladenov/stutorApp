@@ -13,11 +13,15 @@ export function addUser(user) {
   }
 }
 
-export function addSkill(skill) {
-  return {
-    type: ADD_SKILL,
-    payload: skill
-  }
+export function addSkill(skill, userId) {
+	console.log("logging to the console FROM THE ACTION!")
+	return {
+		type: ADD_SKILL,
+		payload: {
+			skill,
+			userId
+			}
+	}
 }
 
 export function addAccepted(currentUserId, userId) {
