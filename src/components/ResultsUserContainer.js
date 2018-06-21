@@ -8,7 +8,7 @@ export default function ResultsUserContainer (props) {
   const skillId = props.skillId
 
   const handleClick = (param1, param2) => (e) => {
-    props.addAccepted(1, param2)
+    props.addAccepted(param1, param2)
   }
   return (
 
