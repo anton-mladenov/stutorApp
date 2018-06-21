@@ -3,10 +3,12 @@ import './HomeDashContainer.css';
 import background from '../lib/background.png';
 import { Link } from 'react-router-dom';
 import './HomeDashContainer.css';
+import {waitingForAcceptance} from '../lib/matching'
+import { connect } from 'react-redux'
 
-export default class HomeDashContainer extends Component {
+export  class HomeDashContainer extends Component {
 	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
-
+	waiting = waitingForAcceptance(9, this.props.data).length
 
   render() {
 	return (
@@ -32,7 +34,7 @@ export default class HomeDashContainer extends Component {
       <br/>
         <div className="containerbubbles">
       <button className= "button-dash2"> <Link to={`/addskill/${this.currentUserId}`} className="link-text"> Become a tutor </Link> </button>
-      <button className= "button-dash4"> <Link to={`/homedash`} className="link-text-small"> 3 Matches </Link> </button>
+      <button className= "button-dash4"> <Link to={`/friends/${this.currentUserId}`} className="link-text-small"> {this.waiting} Matches </Link> </button>
         </div>
       <br/>
       <div  className="footer">
@@ -41,3 +43,11 @@ export default class HomeDashContainer extends Component {
 	)
   }
 }
+
+const mapStateToProps = (state) => {
+	return {
+		data: state.stutor
+	}
+}
+
+export default connect(mapStateToProps)(HomeDashContainer)
