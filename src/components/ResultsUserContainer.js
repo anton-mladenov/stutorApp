@@ -9,12 +9,12 @@ export default function ResultsUserContainer (props) {
 
   const handleClick = (param1, param2) => (e) => {
     document.getElementById("main-results-user-container").classList.add("animated-yes")
-    setInterval(() => props.addAccepted(param1, param2), 1000);
+    setTimeout(() => props.addAccepted(param1, param2), 1000);
 
   }
   const handleClick1 = (param1, param2) => (e) => {
     document.getElementById("main-results-user-container").classList.add("animated-no")
-    setInterval(() => props.addRejected(param1, param2), 1000);
+    setTimeout(() => props.addRejected(param1, param2), 1000);
   }
   return (
 
