@@ -16,9 +16,6 @@ import './FriendsContainer.css'
      console.log(waitingForAcceptance(2, this.props.data))
    }
 
-   waitingForAcceptance2 = (currentUserId, allUsers) => {
-     return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))
-   }
 
   getAcceptedUsers = (currentUserId, allUsers) => {
      const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
@@ -31,7 +28,7 @@ import './FriendsContainer.css'
      this.props.addAccepted(param1, param2)
    }
    handleClickNo = (param1, param2) => (e) => {
-  this.props.addRejected(param1, param2)
+   this.props.addRejected(param1, param2)
   }
 
     render() {
@@ -41,9 +38,15 @@ import './FriendsContainer.css'
 
 		    <h1 className="title3">Student Waiting for Acceptance</h1>
         <ul>
-        { waitingForAcceptance(this.currentUserId1, this.props.data)
+        { waitingForAcceptance(this.currentUserId1, this.props.data).splice(0,1)
           .map(a => {
-            return <li className = "coolName">{ a.firstName }<button value="GO" className="button-go" onClick={ this.handleClick(this.currentUserId1, a.id) }/> <button value="NO" className="button-no" onClick={ this.handleClickNo(this.currentUserId1, a.id) }/></li>
+            return <li className = "coolName">
+            { a.firstName } {} { a.lastName }
+            <img src = {a.profilepic} className ="coolPic"/>
+            <br/><h2 className="coolBio">{a.shortBio}</h2><br/>
+            <button value="GO" className="button-go" onClick={ this.handleClick  (this.currentUserId1, a.id) }/>
+            <button value="NO" className="button-no" onClick={ this.handleClickNo(this.currentUserId1, a.id) }/>
+            </li>
           })
         }
         </ul>
@@ -52,7 +55,7 @@ import './FriendsContainer.css'
          <ul>
          {this.getAcceptedUsers( this.currentUserId1,this.props.data)
          .map(a => {
-           return <div><li className = "coolName">{ a.firstName } <Link to="/whatapp" ><button className="button-chat">Text me</button></Link></li></div>
+           return <div><li className = "coolName">{ a.firstName }{} { a.lastName } <Link to="/whatapp" ><button className="button-chat">Text me</button></Link></li></div>
          })}
          </ul>
         </div>

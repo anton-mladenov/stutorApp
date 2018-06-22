@@ -21,11 +21,21 @@
   font-weight:   600;
   list-style-type: none;
   font-size: 25px;
-
 }
 
+.coolBio {
+  font-family:   'Poppins', sans-serif;
+   font-style: bold;
+  font-weight:   600;
+  list-style-type: none;
+  font-size: 15px;
+}
+
+
+
 .button-go {
-  background-color: #4CAF50;
+  background-color: #8AE0AD;
+  border-color: #FFFFFF;
   border: none;
   color: white;
   padding: 20px;
@@ -49,7 +59,8 @@ padding: 20px;
 }
 
 .button-no {
-  background-color: red;
+  background-color: #F77171;
+  border-color: #FFFFFF;
   border: none;
   color: white;
   padding: 20px;
@@ -89,5 +100,5 @@ padding: 20px;
   position: relative;
   padding-bottom: 10px;
   padding-left: 20px;
-  
+
 }
