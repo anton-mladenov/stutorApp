@@ -19,11 +19,23 @@ export const getTutorsWithSkillIdAndNotAccepted = (currentUserId, skillId, allUs
   })
 }
 
-
 export const waitingForAcceptance = (currentUserId, allUsers) => {
-console.log(allUsers)
-  return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))
+  const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
+  const alreadyAccepted= allUsers.filter(user => currentUserAccepted.accepted.includes(user.id)).map(user => user.id)
+  const alreadyRejected= allUsers.filter(user => currentUserAccepted.rejected.includes(user.id)).map(user => user.id)
+  //console.log(alreadyAccepted,'alreadyAccepted')
+  return allUsers.filter(allUsers =>
+    allUsers.accepted.includes(currentUserId))
+    .filter(user => !alreadyAccepted.includes(user.id)
+    && !alreadyRejected.includes(user.id))
 }
+
+
+//export const waitingForAcceptance = (currentUserId, allUsers) => {
+//console.log(allUsers)
+//  return allUsers.filter(allUsers => allUsers.accepted.includes(currentUserId))
+//}
+
 export const matchLogic = (currentUserId, allUsers) => {
   const currentUserAccepted = allUsers.filter(a => a.id === currentUserId).reduce((acc, val) => val)
 

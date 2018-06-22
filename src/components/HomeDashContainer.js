@@ -10,7 +10,9 @@ export  class HomeDashContainer extends Component {
 
 	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
 
-	waiting = this.props.data.filter(a => a.id === this.currentUserId).reduce((acc, val) => val).accepted.length
+	matched = this.props.data.filter(a => a.id === this.currentUserId).reduce((acc, val) => val).accepted.length
+	waiting = waitingForAcceptance(this.currentUserId, this.props.data).length
+
 
   render() {
 	  console.log(this.props.data)
@@ -37,7 +39,9 @@ export  class HomeDashContainer extends Component {
       <br/>
         <div className="containerbubbles">
       <button className= "button-dash2"> <Link to={`/addskill/${this.currentUserId}`} className="link-text"> Become a tutor </Link> </button>
-      <button className= "button-dash4"> <Link to={`/friends/${this.currentUserId}`} className="link-text-small"> {this.waiting} Matches </Link> </button>
+      <button className= "button-dash4"> <Link to={`/friends/${this.currentUserId}`} className="link-text-small"> {this.matched} Matches </Link> </button>
+			<button className= "button-dash5 shake"> <Link to={`/friends/${this.currentUserId}`} className="link-text-small"> {this.waiting} Waiting </Link> </button>
+
         </div>
       <br/>
       <div  className="footer">
