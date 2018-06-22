@@ -12,9 +12,12 @@ import './FriendsContainer.css'
 
    currentUserId1 = parseInt(this.props.match.params.currentUserId, 10)
 
+
    logIt = () => {
      console.log(waitingForAcceptance(2, this.props.data))
    }
+
+
 
 
   getAcceptedUsers = (currentUserId, allUsers) => {
@@ -36,8 +39,9 @@ import './FriendsContainer.css'
 	    <div>
       <div className="home-dash-container">
 
+
 		    <h1 className="title3">Student Waiting for Acceptance</h1>
-        <ul>
+        <ul >
         { waitingForAcceptance(this.currentUserId1, this.props.data).splice(0,1)
           .map(a => {
             return <li className = "coolName">
@@ -55,7 +59,7 @@ import './FriendsContainer.css'
          <ul>
          {this.getAcceptedUsers( this.currentUserId1,this.props.data)
          .map(a => {
-           return <div><li className = "coolName">{ a.firstName }{} { a.lastName } <Link to="/whatapp" ><button className="button-chat">Text me</button></Link></li></div>
+           return <div><li className = "coolName">{ a.firstName }{} { a.lastName } <Link to="/whatapp" ><button className="button-chat"></button></Link></li></div>
          })}
          </ul>
         </div>

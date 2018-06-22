@@ -21,6 +21,7 @@
   font-weight:   600;
   list-style-type: none;
   font-size: 25px;
+  padding-left: 0px;
 }
 
 .coolBio {
@@ -30,6 +31,12 @@
   list-style-type: none;
   font-size: 15px;
 }
+
+.ul{
+  padding-left: 0px;
+}
+.li{
+  padding-left: 0px;}
 
 
 
@@ -83,6 +90,9 @@ padding: 20px;
 
 .button-chat {
   background-color:  #5E93DB;
+  background-image:  url('../lib/icon-chat.png');
+  background-repeat: no-repeat;
+  background-position: center;
   border: none;
   color: white;
   padding: 20px;
