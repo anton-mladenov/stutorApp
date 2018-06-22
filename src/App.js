@@ -27,7 +27,11 @@ class App extends Component {
 		<Route path="/addskill/:currentUserId" component={AddSkillContainer} />
 		<Route exact path="/search" component={SearchBarContainer} />
 		<Route path="/friends/:currentUserId" component={FriendsContainer} />
+
     <Route path="/newsearch/" component={NewSearch} />
+
+    <Route path='/whatapp' component={() => window.location = 'https://wa.me/004915226150632'}/>
+
         {/* <Route exact path="/dashboard" component={DashboardContainer} /> */}
 
 

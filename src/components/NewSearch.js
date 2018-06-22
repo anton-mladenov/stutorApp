@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 
 class NewSearch extends PureComponent {
-  state = {searchResults:[]}
-
+state = {searchResults:[]}
 matchingScore = (s, t) => {
   if (!s.length) return t.length;
   if (!t.length) return s.length;
@@ -22,7 +21,7 @@ getScore = (s) => {
     let obj = {score: this.matchingScore(s, data[i].name), id: data[i].id, name: data[i].name}
     dataReturn.push(obj)
   }
-  return dataReturn.sort(function(a, b){return a.score - b.score}).slice(0,1);
+  return dataReturn.sort(function(a, b){return a.score - b.score}).slice(0,3);
 }
 
 handleChange = (event) => {

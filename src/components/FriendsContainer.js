@@ -27,38 +27,32 @@ import './FriendsContainer.css'
      return allUsers.filter(user => currentUserAccepted.accepted.includes(user.id))
    }
 
-   // listOfFriends = getNameofStudentsToBeAccepted(this.currentUserId, this.props.data)
-
-   // showListOfFriends = (listOfFriends) => {
-   //   console.log(listOfFriends)
-   //   return listOfFriends
-   // }
    handleClick = (param1, param2) => (e) => {
      this.props.addAccepted(param1, param2)
    }
-handleClickNo = (param1, param2) => (e) => {
+   handleClickNo = (param1, param2) => (e) => {
   this.props.addRejected(param1, param2)
-}
+  }
 
     render() {
 	   return (
 	    <div>
       <div className="home-dash-container">
 
-		    <h1>Student Waiting for Acceptance</h1>
+		    <h1 className="title3">Student Waiting for Acceptance</h1>
         <ul>
         { waitingForAcceptance(this.currentUserId1, this.props.data)
           .map(a => {
-            return <li>{ a.firstName }<button value="GO" className="button-go" onClick={ this.handleClick(this.currentUserId1, a.id) }/> <button value="NO" className="button-no" onClick={ this.handleClickNo(this.currentUserId1, a.id) }/></li>
+            return <li className = "coolName">{ a.firstName }<button value="GO" className="button-go" onClick={ this.handleClick(this.currentUserId1, a.id) }/> <button value="NO" className="button-no" onClick={ this.handleClickNo(this.currentUserId1, a.id) }/></li>
           })
         }
         </ul>
         <br/>
-        <h1>Accepted Students</h1>
+        <h1 className="title3">Accepted Students</h1>
          <ul>
          {this.getAcceptedUsers( this.currentUserId1,this.props.data)
          .map(a => {
-           return <div><li>{ a.firstName } </li></div>
+           return <div><li className = "coolName">{ a.firstName } <Link to="/whatapp" ><button className="button-chat">Text me</button></Link></li></div>
          })}
          </ul>
         </div>

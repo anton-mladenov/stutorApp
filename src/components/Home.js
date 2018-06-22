@@ -6,9 +6,11 @@ export default class componentName extends Component {
   render() {
 	return (
 	  <div className="mainDiv">
-		  
+
 		<div className="logoDiv">
-			<p className="logoText"> STUTOR </p>
+    <br/>
+    <br/>
+			<p className="logoText"> . </p>
 		</div>
 
 		<div className="taglineDiv">
