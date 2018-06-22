@@ -10,6 +10,7 @@ import AddSkillContainer from "./components/AddSkillContainer"
 import SearchBarContainer from "./components/SearchBarContainer"
 import Home from "./components/Home.js"
 import FriendsContainer from "./components/FriendsContainer"
+import NewSearch from "./components/NewSearch"
 // import ResultsContainer from './components/ResultsContainer'
 // import DashboardContainer from './components/DashboardContainer'
 
@@ -26,6 +27,7 @@ class App extends Component {
 		<Route path="/addskill/:currentUserId" component={AddSkillContainer} />
 		<Route exact path="/search" component={SearchBarContainer} />
 		<Route path="/friends/:currentUserId" component={FriendsContainer} />
+    <Route path="/newsearch/" component={NewSearch} />
         {/* <Route exact path="/dashboard" component={DashboardContainer} /> */}
 
 
