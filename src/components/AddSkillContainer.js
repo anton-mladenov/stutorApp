@@ -42,7 +42,7 @@ export class AddSkillContainer extends Component {
 	}
 
 	render() {
-		
+
 		return (
 		<div>
 			<div className="home-dash-container">
@@ -53,11 +53,11 @@ export class AddSkillContainer extends Component {
 
 				<div>
 
-				<input type="text" onChange={this.handleChange} placeholder="Find a skill"/>
+				<input type="text" className = "inputskill" onChange={this.handleChange} placeholder="   Find a skill"/>
 					<ul>
 						{/* {this.state.searchResults.map(a => console.log(a.id))}						 */}
 						{this.state.searchResults.map(a => <button key={a.id} onClick={()=>this.props.addSkill(a.id, this.currentUserId)}><li key={a.id}>Did you mean {a.name}?</li></button>)}
-					</ul> 
+					</ul>
 				</ div>
 
 				<button className = "black-button"><Link to={`/homedash/${this.currentUserId}`}> <p className= "link-text"> GO! </p> </Link> </button>
@@ -65,7 +65,7 @@ export class AddSkillContainer extends Component {
 				<div id="TEST">
 				<ul>
 				{/* { this.props.users.map(user => user.id === this.currentUserId ? <li key={user.id}>hahah</li> : null ) } */}
-				{/* {this.props.users.map(a => a.id === this.currentUserId && a.skills.map(b => 
+				{/* {this.props.users.map(a => a.id === this.currentUserId && a.skills.map(b =>
 					this.props.skills.map(c => c === b ? <li>c.name</li> : null)
 				))} */}
 					{/* {this.props.users.filter(user => user.id === this.currentUserId)[0].skills.map(sid => )} */}
