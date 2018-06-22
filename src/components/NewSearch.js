@@ -14,20 +14,20 @@ matchingScore = (s, t) => {
   ) + 1;
 }
 
-getScore = (s) => {
+getScore = (s, x) => {
   let dataReturn=[]
   const data = this.props.data.skills;
   for (let i = 0; i < data.length; i++) {
     let obj = {score: this.matchingScore(s, data[i].name), id: data[i].id, name: data[i].name}
     dataReturn.push(obj)
   }
-  return dataReturn.sort(function(a, b){return a.score - b.score}).slice(0,3);
+  return dataReturn.sort(function(a, b){return a.score - b.score}).slice(0,x);
 }
 
 handleChange = (event) => {
   event.preventDefault()
   this.setState({
-    searchResults: event.target.value.length >=3 ? this.getScore(event.target.value) : []
+    searchResults: event.target.value.length >=3 ? this.getScore(event.target.value,1) : []
   })
 }
 
