@@ -4,48 +4,44 @@ import { addSkill } from '../actions/stutor'
 import { Link } from 'react-router-dom'
 import './AddSkillContainer.css';
 
-// const user11 = {
-// 		id: 11,
-// 		skills: [],
-// 	}
-
 export class AddSkillContainer extends Component {
 
 	currentUserId = parseInt(this.props.match.params.currentUserId, 10)
-	// userFromStoreWithID = this.props.users
-
-	// testing = () => {
-	// 	console.log("testing function running ...")
-	// 	return this.props.users.map(user => user.id === this.currentUserId ? console.log("skillID in user's skills array: " + user.skills) : null )
-	// }
 
 	state = {
-		showMenu: false,
-		selected: ""
+		// showMenu: false,
+		// selected: "",
+		searchResults:[]
 	}
 
-	// addNewSkill = (skill, userId) => {
-	// 	return userId.skills.includes(skill) ? userId.skills : userId.skills.unshift(skill)
-	// }
+	matchingScore = (s, t) => {
+		if (!s.length) return t.length;
+		if (!t.length) return s.length;
+		return Math.min(
+			this.matchingScore(s.toLowerCase().substr(1), t) + 1,
+			this.matchingScore(t.toLowerCase().substr(1), s) + 1,
+			this.matchingScore(s.toLowerCase().substr(1), t.toLowerCase().substr(1)) + (s[0] !== t[0] ? 1 : 0)
+		) + 1;
+	}
+
+	getScore = (s) => {
+		let dataReturn=[]
+		const data = this.props.data.skills;
+		for (let i = 0; i < data.length; i++) {
+			let obj = {score: this.matchingScore(s, data[i].name), id: data[i].id, name: data[i].name}
+			dataReturn.push(obj)
+		}
+		return dataReturn.sort(function(a, b){return a.score - b.score}).slice(0,1);
+	}
 
 	handleChange = (event) => {
 		event.preventDefault()
-		if (this.state.selected === "") {
-			this.setState({selected: event.target.value })
-		}
-		console.log("event.target.value: " + event.target.value)
-		this.props.addSkill(event.target.value, this.currentUserId)
-		// console.log("currentUserId skills array: " + this.currentUserId.skills)
+		this.setState({
+			searchResults: event.target.value.length >=3 ? this.getScore(event.target.value) : []
+		})
 	}
 
-	showSkills = () => {
-        return this.props.skills.map(skill => <option value={skill.id} key={skill.id}> {skill.name} </option>) /*value={skill.id} onClick={this.handleChange}*/
-    }
-
 	render() {
-		// console.log(this.currentUserId)
-		// console.log(typeof this.userFromStoreWithID)
-		// this.testing()
 		
 		return (
 		<div>
@@ -55,20 +51,26 @@ export class AddSkillContainer extends Component {
 				<h1 className="title"> JOIN </h1>
 				</div>
 
-				<div className = "add-skill-container">
-					<label >
-						<p className ="title2"> Become a Tutor </p>
-						<select className="select" value={this.state.value} onChange={this.handleChange}> {/*value={this.state.value} onChange={this.handleChange}*/}
- 						<option value="0">Select Skill</option>
-						 {this.showSkills()}
-						</select>
-					</label>
-				</div>
+				<div>
 
-				<br/>
+				<input type="text" onChange={this.handleChange} placeholder="Find a skill"/>
+					<ul>
+						{/* {this.state.searchResults.map(a => console.log(a.id))}						 */}
+						{this.state.searchResults.map(a => <button key={a.id} onClick={()=>this.props.addSkill(a.id, this.currentUserId)}><li key={a.id}>Did you mean {a.name}?</li></button>)}
+					</ul> 
+				</ div>
 
 				<button className = "black-button"><Link to={`/homedash/${this.currentUserId}`}> <p className= "link-text"> GO! </p> </Link> </button>
-				
+				{/* { this.props.users.map(user => this.props.skills.map(skill => <h6>{user.skill["name"]}</h6>)) } */}
+				<div id="TEST">
+				<ul>
+				{/* { this.props.users.map(user => user.id === this.currentUserId ? <li key={user.id}>hahah</li> : null ) } */}
+				{/* {this.props.users.map(a => a.id === this.currentUserId && a.skills.map(b => 
+					this.props.skills.map(c => c === b ? <li>c.name</li> : null)
+				))} */}
+					{/* {this.props.users.filter(user => user.id === this.currentUserId)[0].skills.map(sid => )} */}
+				</ul>
+				</div>
 				<div className= "footer">
 				</div>
 			</div>
@@ -81,7 +83,8 @@ export class AddSkillContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         skills: state.skills,
-		users: state.stutor
+		users: state.stutor,
+		data: state
     }
 }
 
