@@ -23,7 +23,7 @@ export class ResultsContainer extends PureComponent {
         addRejected = { this.props.addRejected }
       />
     } else {
-      return <p>nothing to see here</p>
+      return <div class="noresults"><p class="noresults-text">Computer says no</p></div>
     }
   }
 

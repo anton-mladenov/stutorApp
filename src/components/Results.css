@@ -165,3 +165,16 @@ font-family: 'Muli', sans-serif; */
     50%  {top:150px; box-shadow: 5px 5px 20px lightgrey;transform: scale(1.05,1.05)}
     100% {top:1000px; box-shadow: 5px 5px 20px lightgrey; transform: scale(1.05,1.05)}
     }
+.noresults {
+  margin-top :160px;
+  background-image: url('../lib/logo-text-small.png');
+  background-repeat: no-repeat;
+  height:500px;
+  width: 300px;
+  margin-left: auto;
+
+}
+.noresults-text {
+  padding-top:  70px;
+  color: #555555;
+}
