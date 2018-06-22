@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { addSkill } from '../actions/stutor'
 
 
 class NewSearch extends PureComponent {
@@ -31,15 +32,15 @@ handleChange = (event) => {
   })
 }
 
-
-
-
   render () {
     return (
       <div>
-      <input type="text" onChange={this.handleChange} placeholder="Find a skill"/>
-      {this.state.searchResults.map(a => <li key={a.id}>Did you mean {a.name}?</li>)}
-      </ div>
+
+    <input type="text" onChange={this.handleChange} placeholder="Find a skill"/>
+	<ul>
+		{this.state.searchResults.map(a => <button key={a.id} onClick={()=>this.props.addSkill(a.id, this.currentUserId)}><li key={a.id}>Did you mean {a.name}?</li></button>)}
+    </ul> 
+	</ div>
 
     )
 
@@ -54,4 +55,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(NewSearch )
+export default connect(mapStateToProps, {addSkill})( NewSearch )
