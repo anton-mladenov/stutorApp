@@ -8,15 +8,18 @@ export default function ResultsUserContainer (props) {
   const skillId = props.skillId
 
   const handleClick = (param1, param2) => (e) => {
-    props.addAccepted(param1, param2)
+    document.getElementById("main-results-user-container").classList.add("animated-yes")
+    setInterval(() => props.addAccepted(param1, param2), 1000);
+
   }
   const handleClick1 = (param1, param2) => (e) => {
-    props.addRejected(param1, param2)
+    document.getElementById("main-results-user-container").classList.add("animated-no")
+    setInterval(() => props.addRejected(param1, param2), 1000);
   }
   return (
 
     selectedUsers.map(stutor =>
-      <div className="results-user-container" key={ stutor.id }>
+      <div id="main-results-user-container"className="results-user-container" key={ stutor.id }>
 
         <div className="results-user-container-type">
           <p className="results-user-container-type-text">{ isTutor(stutor.id, selectedUsers) }</p>
@@ -43,8 +46,8 @@ export default function ResultsUserContainer (props) {
         </div>
 
         <div className="results-buttons-container">
-          <button className="results-button results-button-ok" onClick={ handleClick(props.currentUserId, stutor.id) }/>
           <button className="results-button results-button-no" onClick={ handleClick1(props.currentUserId, stutor.id) }/>
+          <button className="results-button results-button-ok" onClick={ handleClick(props.currentUserId, stutor.id) }/>
         </div>
       </div>
     )

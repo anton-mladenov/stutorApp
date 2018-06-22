@@ -15,7 +15,7 @@ export class ResultsContainer extends PureComponent {
   showSelectedUsers = (selectedUsers) => {
     if (getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor).length > 0) {
       return <ResultsUserContainer
-        selectedUsers = { getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor) }
+        selectedUsers = { getTutorsWithSkillIdAndNotAccepted(this.currentUserId, this.skillId, this.props.data.stutor).splice(0,1) }
         data={ this.props.data }
         skillId= { this.skillId }
         currentUserId = {this.currentUserId}
