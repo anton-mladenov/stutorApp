@@ -8,9 +8,19 @@ export const tutorsSkillSet = [
 	{id: 3,
 	name: "React"},
 	{id: 4,
-	name: "NodeJS"},
+	name: "JavaScript"},
 	{id: 5,
-	name: "Marketing"}
+	name: "Marketing"},
+	{id: 6,
+	name: "Joggling carrots"},
+	{id: 7,
+	name: "Scuba Diving"},
+	{id: 8,
+	name: "Cooking"},
+	{id: 9,
+	name: "Joggling"},
+	{id: 9,
+	name: "Kite Surfing"},
 ]
 
 export const allUsers = [
@@ -75,17 +85,17 @@ export const allUsers = [
 		lastName: "Felix",
 		emailAddress: "eleazar@gmail.com",
 		shortBio: "A senior politician with an unfortunate habit of bumping off the people around her. I am also inspiring and smart.",
-		skills: [],
+		skills: [9],
 		rejected: [9],
 		accepted: [4],
 		profilepic: "http://manne.pro/stutor/6.jpg"
 	},
 	{
 		id: 7,
-		firstName: "Sheela",
+		firstName: "Sheelo",
 		lastName: "Stefanija",
 		emailAddress: "sheela@gmail.com",
-		shortBio: "She enjoys extreme ironing, watching sport and duck herding.",
+		shortBio: "He enjoys extreme ironing, watching sport and duck herding.",
 		skills: [4],
 		rejected: [],
 		accepted: [4, 6],
@@ -123,5 +133,115 @@ export const allUsers = [
 		rejected: [4],
 		accepted: [7, 9],
 		profilepic: "http://manne.pro/stutor/10.jpg"
+	},
+	{
+		id: 11,
+		firstName: "Alex",
+		lastName: "Fairfield",
+		emailAddress: "Alex@gmail.com",
+		shortBio: "He is addicted to the internet, something which his friend Brendon Noel Hodgson pointed out when he was 15. The problem intensified in 2008. Alex has lost two jobs as a result of his addiction, specifically: golf caddy and tea maker.",
+		skills: [2],
+		rejected: [4],
+		accepted: [7, 9],
+		profilepic: "http://manne.pro/stutor/11.jpg"
+	},
+	{
+		id: 12,
+		firstName: "Ruth",
+		lastName: "Bluebird",
+		emailAddress: "Ruth@gmail.com",
+		shortBio: "Ruth is a 61-year-old personal trainer whose life is dominated by solving the murder of her friend, Carol Barker. Carol was poisoned in 2015 and the killer was never brought to justice. She is an American Christian who defines herself as straight. She started studying sports science at college but never finished the course",
+		skills: [2],
+		rejected: [4],
+		accepted: [7, 9],
+		profilepic: "http://manne.pro/stutor/12.jpg"
+	},
+	{
+		id: 13,
+		firstName: "Sarah",
+		lastName: "Doring",
+		emailAddress: "sara@gmail.com",
+		shortBio: "Sarah is a 24-year-old trainee tradesperson who enjoys playing video games, upcycling and working on cars. She is inspiring and friendly, but can also be very lazy and a bit rude. She is a French Buddhist. She finished school and then left academia. She has a severe phobia of ducks, and is obsessed with organic vegetables.",
+		skills: [],
+		rejected: [4],
+		accepted: [7, 9],
+		profilepic: "http://manne.pro/stutor/13.jpg"
+	},
+	{
+		id: 14,
+		firstName: "Dollu",
+		lastName: "Parton",
+		emailAddress: "dolly@gmail.com",
+		shortBio: "Dolly is a 45-year-old personal trainer whose life is dominated by solving the murder of her half brother, Willoughby Samuel. Willoughby was strangled in 2016 and the killer was never brought to justice. She is a British Christian. She finished school and then left academia.",
+		skills: [],
+		rejected: [2],
+		accepted: [7, 6],
+		profilepic: "http://manne.pro/stutor/14.jpg"
+	},
+	{
+		id: 15,
+		firstName: "Graham",
+		lastName: "Portis",
+		emailAddress: "kum@gmail.com",
+		shortBio: "Graham is a 29-year-old spy who enjoys helping old ladies across the road, glamping and cycling. He is smart and generous, but can also be very sneaky and a bit disloyal. He is an Ethiopian Muslim. He has a post-graduate degree. Physically, Graham is in pretty good shape. He is average-height with light skin, dark brown hair and black eyes.",
+		skills: [],
+		rejected: [4],
+		accepted: [7, 9],
+		profilepic: "http://manne.pro/stutor/15.jpg"
+	},
+	{
+		id: 16,
+		firstName: "Matt",
+		lastName: "Barker",
+		emailAddress: "matt@gmail.com",
+		shortBio: "Matt is a 24-year-old tea maker who enjoys watching YouTube videos, painting and binge-watching boxed sets. He is loveable and loveable, but can also be very selfish and a bit boring. He has a degree. Physically, Matt is in pretty good shape. He is very tall with brown skin, brown hair and green eyes.",
+		skills: [],
+		rejected: [4],
+		accepted: [12, 3],
+		profilepic: "http://manne.pro/stutor/10.jpg"
+	},
+	{
+		id: 17,
+		firstName: "Forest",
+		lastName: "Gump",
+		emailAddress: "forestr@gmail.com",
+		shortBio: "Forest is a 28-year-old government politician who enjoys meditation, cycling and stealing candy from babies. He is energetic and kind, but can also be very greedy and a bit sadistic. He has a degree in philosophy, politics and economics. He is allergic to eggs. He is obsessed with selfies.",
+		skills: [8],
+		rejected: [14],
+		accepted: [2, 10],
+		profilepic: "http://manne.pro/stutor/17.jpg"
+	},
+	{
+		id: 18,
+		firstName: "Doris",
+		lastName: "Wonky",
+		emailAddress: "doris@gmail.com",
+		shortBio: "A government politician whose life is dominated by solving the murder of his brother, Leigh Lena.",
+		skills: [7],
+		rejected: [4],
+		accepted: [7, 9],
+		profilepic: "http://manne.pro/stutor/18.jpg"
+	},
+	{
+		id: 19,
+		firstName: "Shane",
+		lastName: "Bender",
+		emailAddress: "shane@gmail.com",
+		shortBio: "Shane is a 23-year-old gym assistant who enjoys spreading right-wing propoganda, watching television and cookery. He is exciting and smart, but can also be very cowardly and a bit selfish. He started studying sports science at college but never finished the course. He is allergic to sugar.",
+		skills: [6],
+		rejected: [14],
+		accepted: [11, 18],
+		profilepic: "http://manne.pro/stutor/19.jpg"
+	},
+	{
+		id: 20,
+		firstName: "Clarke",
+		lastName: "Dogwood",
+		emailAddress: "clarke@gmail.com",
+		shortBio: "Clarke is a 20-year-old part time kitchen assistant who enjoys reading, traveling and vandalising bus stops. He is creative and exciting, but can also be very selfish and a bit sneaky. He started studying food science at college but never finished the course. He is obsessed with milkshake. Physically, Clarke is in pretty good shape. He is very short with olive skin, red hair and green eyes. He has a tattoo of a cow on his left shoulder.",
+		skills: [9],
+		rejected: [1],
+		accepted: [18, 19],
+		profilepic: "http://manne.pro/stutor/20.jpg"
 	},
 ]
